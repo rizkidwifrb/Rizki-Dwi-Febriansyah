@@ -7,7 +7,7 @@ const artworks = [
     id: "01",
     title: "NIVEA MEN — Body Odor Campaign",
     category: "Campaign",
-    image: "/assets/graphic-design/nivea-men-campaign.jpg",
+    image: "assets/graphic-design/nivea-men-campaign.jpg",
     description:
       "Product-led campaign visual with a direct headline, dramatic lighting, and a clear promotional hierarchy.",
     tags: ["Campaign Visual", "Product Design", "Social Media"],
@@ -16,7 +16,7 @@ const artworks = [
     id: "02",
     title: "Captain Morgan — Spiced Gold",
     category: "Campaign",
-    image: "/assets/graphic-design/captain-morgan-campaign.jpg",
+    image: "assets/graphic-design/captain-morgan-campaign.jpg",
     description:
       "A cinematic product composition built around atmosphere, depth, and a warm narrative setting.",
     tags: ["Key Visual", "Composition", "Advertising"],
@@ -25,7 +25,7 @@ const artworks = [
     id: "03",
     title: "Matchday — Indonesia vs China",
     category: "Social Media",
-    image: "/assets/graphic-design/matchday-campaign.jpg",
+    image: "assets/graphic-design/matchday-campaign.jpg",
     description:
       "A high-energy matchday poster balancing team identity, player focus, and editorial sports typography.",
     tags: ["Sports Visual", "Social Media", "Photo Composite"],
@@ -34,7 +34,7 @@ const artworks = [
     id: "04",
     title: "Aventador — Automotive Poster",
     category: "Poster",
-    image: "/assets/graphic-design/aventador-poster.jpg",
+    image: "assets/graphic-design/aventador-poster.jpg",
     description:
       "A sharp automotive poster study using a monochrome portrait, vivid product color, and layered motion.",
     tags: ["Poster", "Automotive", "Art Direction"],
@@ -43,7 +43,7 @@ const artworks = [
     id: "05",
     title: "Kahf — Men Care Promotion",
     category: "Social Media",
-    image: "/assets/graphic-design/kahf-campaign.jpg",
+    image: "assets/graphic-design/kahf-campaign.jpg",
     description:
       "A restrained retail visual with soft product staging and clear offer communication.",
     tags: ["Product Visual", "Promotion", "Social Media"],
@@ -52,7 +52,7 @@ const artworks = [
     id: "06",
     title: "Jordan — Brand Visual",
     category: "Brand Visual",
-    image: "/assets/graphic-design/jordan-brand-visual.jpg",
+    image: "assets/graphic-design/jordan-brand-visual.jpg",
     description:
       "A tactile brand composition that combines material, silhouette, and basketball culture.",
     tags: ["Brand Visual", "Poster", "Composition"],
@@ -64,37 +64,37 @@ const webScreens = [
     id: "01",
     title: "Brand entry",
     label: "A quiet, recognizable first touch.",
-    image: "/assets/iman-in-motion/01-brand-intro.jpg",
+    image: "assets/iman-in-motion/01-brand-intro.jpg",
   },
   {
     id: "02",
     title: "AIMAN chatbot",
     label: "A reflective AI companion for calm conversation.",
-    image: "/assets/iman-in-motion/02-aiman-chatbot.jpg",
+    image: "assets/iman-in-motion/02-aiman-chatbot.jpg",
   },
   {
     id: "03",
     title: "Islamic film literacy",
     label: "Editorial articles make discovery more meaningful.",
-    image: "/assets/iman-in-motion/03-islamic-literacy.jpg",
+    image: "assets/iman-in-motion/03-islamic-literacy.jpg",
   },
   {
     id: "04",
     title: "Film discovery",
     label: "Curated recommendations with a clean browsing rhythm.",
-    image: "/assets/iman-in-motion/04-film-discovery.jpg",
+    image: "assets/iman-in-motion/04-film-discovery.jpg",
   },
   {
     id: "05",
     title: "Mood reflection",
     label: "A thoughtful layer connecting emotion and reflection.",
-    image: "/assets/iman-in-motion/05-mood-reflection.jpg",
+    image: "assets/iman-in-motion/05-mood-reflection.jpg",
   },
   {
     id: "06",
     title: "Mood pathway",
     label: "Three prompts lead to one relevant film.",
-    image: "/assets/iman-in-motion/06-mood-pathway.jpg",
+    image: "assets/iman-in-motion/06-mood-pathway.jpg",
   },
 ];
 
@@ -471,7 +471,7 @@ export default function Home() {
         <a className="brand" href="#about" aria-label="Go to About Rizki">
           <span className="brand-avatar">
             <img
-              src="/assets/profile/rizki-dwi-febriansyah.png"
+              src="assets/profile/rizki-dwi-febriansyah.png"
               alt=""
               aria-hidden="true"
             />
@@ -565,7 +565,7 @@ export default function Home() {
             aria-label="Open Rizki's profile details"
           >
             <img
-              src="/assets/profile/rizki-dwi-febriansyah.png"
+              src="assets/profile/rizki-dwi-febriansyah.png"
               alt="Rizki Dwi Febriansyah, S.Sos."
             />
             <div className="portrait-gradient" />
@@ -642,12 +642,12 @@ export default function Home() {
             </div>
             <Tilt className="work-media design-stack">
               <img
-                src="/assets/graphic-design/matchday-campaign.jpg"
+                src="assets/graphic-design/matchday-campaign.jpg"
                 alt="Matchday graphic design by Rizki"
                 loading="lazy"
               />
               <img
-                src="/assets/graphic-design/nivea-men-campaign.jpg"
+                src="assets/graphic-design/nivea-men-campaign.jpg"
                 alt="NIVEA MEN campaign graphic by Rizki"
                 loading="lazy"
               />
@@ -710,7 +710,7 @@ export default function Home() {
             </div>
             <Tilt className="work-media web-cover">
               <img
-                src="/assets/iman-in-motion/06-mood-pathway.jpg"
+                src="assets/iman-in-motion/06-mood-pathway.jpg"
                 alt="IMAN IN MOTION mood discovery screen"
                 loading="lazy"
               />
