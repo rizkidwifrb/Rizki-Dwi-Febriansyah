@@ -223,14 +223,6 @@ const projectCategories = [
   },
 ];
 
-const gravityMarks = [
-  { label: "RDF", x: "7%", y: "20%", delay: "-1.8s", size: "small" },
-  { label: "01", x: "82%", y: "14%", delay: "-3.4s", size: "small" },
-  { label: "✦", x: "90%", y: "62%", delay: "-5s", size: "medium" },
-  { label: "AI", x: "12%", y: "78%", delay: "-2.5s", size: "small" },
-  { label: "03", x: "73%", y: "83%", delay: "-4.2s", size: "small" },
-];
-
 function Arrow({ diagonal = false }) {
   return <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>;
 }
@@ -330,26 +322,6 @@ function ScrambleValue({ value, label }) {
   );
 }
 
-function GravityField() {
-  return (
-    <div className="gravity-field" aria-hidden="true">
-      {gravityMarks.map((mark) => (
-        <span
-          key={`${mark.label}-${mark.x}`}
-          className={`gravity-track gravity-${mark.size}`}
-          style={{
-            "--mark-x": mark.x,
-            "--mark-y": mark.y,
-            "--mark-delay": mark.delay,
-          }}
-        >
-          <i>{mark.label}</i>
-        </span>
-      ))}
-    </div>
-  );
-}
-
 function Header({ activePage, onNavigate }) {
   const activeNav = ["graphic", "webapp", "video"].includes(activePage)
     ? "projects"
@@ -401,7 +373,7 @@ function AboutView() {
       <div className="about-layout">
         <div className="about-intro">
           <p className="eyebrow">Hi, I&apos;m Rizki.</p>
-          <h1 id="about-title">Visual work with a point of view.</h1>
+          <h1 id="about-title">Visual Specialist</h1>
           <p className="lead">
             Rizki Dwi Febriansyah, S.Sos. is a Visual Specialist focused on graphic design,
             video editing, visual storytelling, and digital innovation.
@@ -429,7 +401,7 @@ function AboutView() {
               <span className="identity-line" />
             </div>
             <div className="identity-footer">
-              <span>RDF / CREATIVE ID</span>
+              <span>BOGOR / INDONESIA</span>
               <strong>Design · Motion · Digital</strong>
             </div>
           </article>
@@ -754,7 +726,6 @@ export default function App() {
         onPointerMove={moveGravity}
         onPointerLeave={resetGravity}
       >
-        <GravityField />
         <Header activePage={activePage} onNavigate={setActivePage} />
         <main className="view-stage" key={activePage}>
           {renderView()}
