@@ -215,7 +215,6 @@ const projectCategories = [
     title: "Video Editing",
     type: "Cinematic reel",
     description: "Two story-led edits built around pacing, clarity, and feeling.",
-    image: "https://i.ytimg.com/vi/hUufVZppXqk/hqdefault.jpg",
     count: "02 selected edits",
   },
 ];
@@ -524,7 +523,23 @@ function ProjectsView({ onOpenProject }) {
             onClick={() => onOpenProject(project.id)}
             style={{ "--project-index": index }}
           >
-            <img src={project.image} alt="" loading={index === 0 ? "eager" : "lazy"} />
+            {project.image ? (
+              <img src={project.image} alt="" loading={index === 0 ? "eager" : "lazy"} />
+            ) : (
+              <span className="project-video-visual" aria-hidden="true">
+                <span className="video-visual-meta">EDIT / 02</span>
+                <strong>VE</strong>
+                <span className="video-visual-wave">
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                </span>
+              </span>
+            )}
             <span className="project-overlay" />
             <span className="project-choice-top">
               <small>{project.number}</small>
