@@ -396,6 +396,8 @@ export default function Home() {
   const [activeArtwork, setActiveArtwork] = useState(null);
   const [activeSection, setActiveSection] = useState("about");
   const portraitRef = useRef(null);
+  const modalCloseRef = useRef(null);
+  const artworkTriggerRef = useRef(null);
 
   useEffect(() => {
     const nodes = Array.from(document.querySelectorAll(".reveal"));
@@ -422,6 +424,11 @@ export default function Home() {
     };
     window.addEventListener("keydown", close);
     document.body.style.overflow = activeArtwork ? "hidden" : "";
+    if (activeArtwork) {
+      requestAnimationFrame(() => modalCloseRef.current?.focus());
+    } else {
+      artworkTriggerRef.current?.focus();
+    }
     return () => {
       window.removeEventListener("keydown", close);
       document.body.style.overflow = "";
@@ -490,7 +497,7 @@ export default function Home() {
         </nav>
 
         <a className="header-cta" href="mailto:rizkidwifrb@gmail.com">
-          Start a project <Arrow diagonal />
+          Contact me <Arrow diagonal />
         </a>
 
         <a className="mobile-mail" href="mailto:rizkidwifrb@gmail.com">
@@ -539,11 +546,11 @@ export default function Home() {
               </small>
             </div>
             <div className="hero-actions">
-              <a className="button light" href="#about-profile">
-                Explore my profile <Arrow diagonal />
+              <a className="button light" href="#work">
+                View selected work <Arrow diagonal />
               </a>
-              <a className="text-link" href="#work">
-                View selected work <Arrow />
+              <a className="text-link" href="#about-profile">
+                Explore my profile <Arrow />
               </a>
             </div>
           </div>
@@ -674,10 +681,15 @@ export default function Home() {
             </div>
             <Tilt className="work-media video-cover">
               <img
-                src="https://i.ytimg.com/vi/hUufVZppXqk/maxresdefault.jpg"
+                src="https://i.ytimg.com/vi/hUufVZppXqk/hqdefault.jpg"
                 alt="Video editing project preview"
                 loading="lazy"
                 referrerPolicy="no-referrer"
+                onError={(event) => {
+                  event.currentTarget.onerror = null;
+                  event.currentTarget.src =
+                    "https://i.ytimg.com/vi/hUufVZppXqk/mqdefault.jpg";
+                }}
               />
               <span className="play-disc">▶</span>
               <span className="timecode">00:01:14:08</span>
@@ -853,6 +865,7 @@ export default function Home() {
               type="button"
               className={activeFilter === filter ? "active" : ""}
               onClick={() => setActiveFilter(filter)}
+              aria-pressed={activeFilter === filter}
             >
               {filter}
             </button>
@@ -865,7 +878,10 @@ export default function Home() {
               <Tilt className="art-visual">
                 <button
                   type="button"
-                  onClick={() => setActiveArtwork(artwork)}
+                  onClick={(event) => {
+                    artworkTriggerRef.current = event.currentTarget;
+                    setActiveArtwork(artwork);
+                  }}
                   aria-label={`Open ${artwork.title}`}
                 >
                   <img src={artwork.image} alt={artwork.title} loading="lazy" />
@@ -1023,7 +1039,7 @@ export default function Home() {
                 <article key={certification.title}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <div>
-                    <h4>{certification.title}</h4>
+                    <h4 lang="id">{certification.title}</h4>
                     <p>{certification.issuer}</p>
                   </div>
                   <small>{certification.date}</small>
@@ -1093,6 +1109,7 @@ export default function Home() {
             aria-labelledby="art-modal-title"
           >
             <button
+              ref={modalCloseRef}
               type="button"
               className="modal-close"
               onClick={() => setActiveArtwork(null)}
