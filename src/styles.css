@@ -2702,6 +2702,18 @@ a:focus-visible {
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
+.tool-item > .skill-mark {
+  display: grid;
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  overflow: visible;
+  color: var(--tool-color);
+  font-size: initial;
+  line-height: normal;
+}
+
 .tool-item:hover .skill-mark {
   border-color: var(--tool-color);
   transform: scale(1.08);
