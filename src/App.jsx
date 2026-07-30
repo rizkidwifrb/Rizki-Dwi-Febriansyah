@@ -7,10 +7,16 @@ import {
   siGithub,
   siHtml5,
   siJavascript,
+  siObsstudio,
   siReact,
   siTailwindcss,
   siVite,
 } from "simple-icons";
+import {
+  siAdobeillustrator,
+  siAdobephotoshop,
+  siCanva,
+} from "simple-icons-legacy";
 
 const linkedinUrl =
   "https://www.linkedin.com/in/rizki-dwi-febriansyah-s-sos-5152931a6";
@@ -142,12 +148,13 @@ const videos = [
 ];
 
 const skillTools = [
-  { name: "Adobe Photoshop", short: "Ps", color: "#31a8ff" },
-  { name: "Adobe Illustrator", short: "Ai", color: "#ff9a00" },
-  { name: "Canva", short: "Ca", color: "#7d72ff", variant: "canva" },
+  { name: "Adobe Photoshop", short: "Ps", color: "#31a8ff", icon: siAdobephotoshop },
+  { name: "Adobe Illustrator", short: "Ai", color: "#ff9a00", icon: siAdobeillustrator },
+  { name: "Canva", short: "Ca", color: "#00c4cc", icon: siCanva },
   { name: "CorelDRAW", short: "Cd", color: "#61c454", icon: siCoreldraw },
   { name: "CapCut", short: "Cc", color: "#f4f4ef", variant: "capcut" },
-  { name: "vMix", short: "vM", color: "#8b7cff", variant: "vmix" },
+  { name: "vMix", short: "vMix", color: "#8b7cff", variant: "vmix" },
+  { name: "OBS Studio", short: "OBS", color: "#f4f4ef", icon: siObsstudio },
   { name: "React", short: "Re", color: "#61dafb", icon: siReact },
   { name: "JavaScript", short: "JS", color: "#f7df1e", icon: siJavascript },
   { name: "HTML5", short: "H5", color: "#e34f26", icon: siHtml5 },
@@ -155,9 +162,6 @@ const skillTools = [
   { name: "Tailwind CSS", short: "Tw", color: "#06b6d4", icon: siTailwindcss },
   { name: "Vite", short: "Vi", color: "#8b5cf6", icon: siVite },
   { name: "GitHub", short: "Gh", color: "#f4f4ef", icon: siGithub },
-  { name: "Visual Storytelling", short: "VS", color: "#ff6b8a" },
-  { name: "AI Integration", short: "AI", color: "#55e6c1", variant: "ai" },
-  { name: "Live Streaming", short: "LS", color: "#ff5e57", variant: "live" },
 ];
 
 const disciplines = [
@@ -415,21 +419,21 @@ function AboutView() {
           </div>
         </div>
 
-        <article className="identity-card">
-          <div className="identity-photo">
-            <img
-              src="assets/profile/rizki-dwi-febriansyah.png"
-              alt="Rizki Dwi Febriansyah, S.Sos."
-            />
-            <span className="identity-line" />
-          </div>
-          <div className="identity-footer">
-            <span>RDF / CREATIVE ID</span>
-            <strong>Design · Motion · Digital</strong>
-          </div>
-        </article>
-
         <div className="about-side">
+          <article className="identity-card">
+            <div className="identity-photo">
+              <img
+                src="assets/profile/rizki-dwi-febriansyah.png"
+                alt="Rizki Dwi Febriansyah, S.Sos."
+              />
+              <span className="identity-line" />
+            </div>
+            <div className="identity-footer">
+              <span>RDF / CREATIVE ID</span>
+              <strong>Design · Motion · Digital</strong>
+            </div>
+          </article>
+
           <article className="trait-card">
             <div>
               <span>Strengths</span>

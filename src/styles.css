@@ -291,18 +291,21 @@ a:focus-visible {
   z-index: 1;
   min-width: 0;
   min-height: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(88, 230, 193, 0.35) transparent;
 }
 
 .view {
   display: grid;
   width: min(1500px, calc(100% - 64px));
-  height: 100%;
-  min-height: 0;
+  min-height: 100%;
   grid-template-rows: auto minmax(0, 1fr);
-  gap: clamp(22px, 3.2vh, 38px);
+  gap: clamp(18px, 2.4vh, 28px);
   margin: 0 auto;
-  padding: clamp(18px, 2.4vh, 30px) 0 clamp(20px, 2.6vh, 32px);
+  padding: clamp(16px, 2vh, 24px) 0 clamp(20px, 2.6vh, 32px);
   animation: page-enter 0.7s cubic-bezier(0.2, 0.78, 0.2, 1) both;
 }
 
@@ -401,9 +404,9 @@ a:focus-visible {
   display: grid;
   min-width: 0;
   min-height: 0;
-  grid-template-columns: minmax(0, 1.12fr) minmax(230px, 0.54fr) minmax(310px, 0.82fr);
-  gap: clamp(22px, 2.4vw, 40px);
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1.08fr) minmax(480px, 0.92fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: start;
 }
 
 .about-intro {
@@ -411,16 +414,17 @@ a:focus-visible {
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: clamp(4px, 1.4vh, 14px);
 }
 
 .about-intro h1 {
   max-width: 720px;
-  margin: 14px 0 21px;
-  font-size: clamp(54px, 5.8vw, 98px);
+  margin: 12px 0 18px;
+  font-size: clamp(52px, 5.2vw, 82px);
   font-weight: 600;
-  line-height: 0.9;
-  letter-spacing: -0.075em;
+  line-height: 0.94;
+  letter-spacing: -0.068em;
 }
 
 .about-intro .lead {
@@ -443,12 +447,12 @@ a:focus-visible {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
-  margin-top: clamp(26px, 4vh, 48px);
+  margin-top: clamp(22px, 3vh, 34px);
 }
 
 .stat-card {
   display: flex;
-  min-height: 102px;
+  min-height: 94px;
   flex-direction: column;
   justify-content: space-between;
   padding: 14px;
@@ -477,31 +481,26 @@ a:focus-visible {
 
 .stat-card span {
   color: #929a93;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   line-height: 1.35;
 }
 
 .identity-card {
   position: relative;
-  display: flex;
-  min-height: 0;
-  flex-direction: column;
+  display: grid;
+  min-height: 154px;
+  grid-template-columns: 142px minmax(0, 1fr);
   overflow: hidden;
   border: 1px solid rgba(242, 244, 239, 0.16);
-  border-radius: 24px;
+  border-radius: 20px;
   background: #14171b;
-  box-shadow:
-    0 34px 90px rgba(0, 0, 0, 0.34),
-    12px -12px 52px rgba(88, 230, 193, 0.07),
-    -14px 18px 56px rgba(147, 129, 255, 0.08);
-  animation: card-levitate 7.4s ease-in-out -1.2s infinite;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
 }
 
 .identity-photo {
   position: relative;
   min-height: 0;
-  flex: 1;
   overflow: hidden;
 }
 
@@ -532,20 +531,18 @@ a:focus-visible {
 }
 
 .identity-line {
-  position: absolute;
-  z-index: 2;
-  right: 14px;
-  bottom: 14px;
-  left: 14px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(242, 244, 239, 0.6), transparent);
+  display: none;
 }
 
 .identity-footer {
   position: relative;
   z-index: 2;
-  padding: 17px 18px 19px;
-  border-top: 1px solid rgba(242, 244, 239, 0.08);
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border-left: 1px solid rgba(242, 244, 239, 0.08);
   background: rgba(9, 11, 13, 0.88);
 }
 
@@ -572,7 +569,7 @@ a:focus-visible {
   display: grid;
   min-width: 0;
   min-height: 0;
-  grid-template-rows: minmax(190px, 0.68fr) minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
   gap: 12px;
 }
 
@@ -587,6 +584,7 @@ a:focus-visible {
 
 .trait-card {
   display: grid;
+  min-height: 146px;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -605,7 +603,7 @@ a:focus-visible {
 .trait-card span {
   color: var(--teal);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -621,7 +619,7 @@ a:focus-visible {
 .trait-card p {
   margin: 9px 0 0;
   color: #949b95;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
@@ -629,7 +627,7 @@ a:focus-visible {
   display: grid;
   min-height: 0;
   grid-template-rows: auto minmax(0, 1fr);
-  padding: 16px;
+  padding: 14px;
 }
 
 .tool-panel-title {
@@ -650,22 +648,25 @@ a:focus-visible {
 .tool-panel-title small {
   color: #8f9790;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .tool-grid {
   display: grid;
   min-height: 0;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 7px;
 }
 
 .tool-item {
   position: relative;
-  display: grid;
+  display: flex;
   min-width: 0;
-  min-height: 0;
-  place-items: center;
+  min-height: 66px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   padding: 7px 4px;
   overflow: hidden;
   border: 1px solid rgba(242, 244, 239, 0.065);
@@ -685,17 +686,15 @@ a:focus-visible {
 }
 
 .tool-item > span {
-  position: absolute;
-  right: 4px;
-  bottom: 4px;
-  left: 4px;
+  display: -webkit-box;
+  width: 100%;
   overflow: hidden;
   color: #9aa19b;
-  font-size: 7px;
-  line-height: 1.15;
+  font-size: 8px;
+  line-height: 1.2;
   text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .skill-mark {
@@ -727,13 +726,34 @@ a:focus-visible {
 }
 
 .skill-mark.is-capcut strong {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 15px;
   font-size: 0;
 }
 
+.skill-mark.is-capcut strong::before,
+.skill-mark.is-capcut strong::after {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 8px;
+  content: "";
+  border: 2px solid currentColor;
+}
+
 .skill-mark.is-capcut strong::before {
-  content: "><";
-  font-size: 15px;
-  letter-spacing: -0.2em;
+  top: 0;
+  border-right: 0;
+  transform: skewX(-20deg) rotate(6deg);
+}
+
+.skill-mark.is-capcut strong::after {
+  right: 0;
+  bottom: 0;
+  border-left: 0;
+  transform: skewX(20deg) rotate(-6deg);
 }
 
 .skill-mark.is-vmix strong {
@@ -1796,12 +1816,18 @@ a:focus-visible {
   }
 
   .about-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(215px, 0.48fr) minmax(270px, 0.73fr);
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .about-intro h1 {
-    font-size: clamp(48px, 5.7vw, 78px);
+    max-width: 850px;
+    font-size: clamp(50px, 6.8vw, 78px);
+  }
+
+  .about-side {
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 0.95fr) minmax(0, 1.27fr);
+    grid-template-rows: auto;
   }
 
   .trait-card > div {
@@ -1876,9 +1902,6 @@ a:focus-visible {
   }
 
   .view-stage {
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: thin;
     scrollbar-color: rgba(88, 230, 193, 0.42) transparent;
   }
 
@@ -1900,17 +1923,24 @@ a:focus-visible {
   }
 
   .about-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.54fr);
+    grid-template-columns: 1fr;
   }
 
   .about-side {
-    grid-column: 1 / -1;
-    grid-template-columns: 0.84fr 1.16fr;
-    grid-template-rows: minmax(230px, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
   }
 
   .tool-panel {
-    min-height: 250px;
+    grid-column: 1 / -1;
+  }
+
+  .tool-panel {
+    min-height: 0;
+  }
+
+  .tool-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 
   .work-heading,
@@ -2082,15 +2112,19 @@ a:focus-visible {
   }
 
   .identity-card {
-    min-height: min(500px, 126vw);
-    max-height: 550px;
+    min-height: 154px;
+    max-height: none;
   }
 
   .about-side {
     display: grid;
     grid-template-columns: 1fr;
     grid-column: auto;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
+  }
+
+  .tool-panel {
+    grid-column: auto;
   }
 
   .trait-card {
@@ -2106,20 +2140,21 @@ a:focus-visible {
   }
 
   .tool-panel {
-    min-height: 320px;
+    min-height: 0;
     padding: 13px;
   }
 
   .tool-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 6px;
   }
 
   .tool-item {
-    min-height: 54px;
+    min-height: 68px;
   }
 
   .tool-item > span {
-    font-size: 6px;
+    font-size: 8px;
   }
 
   .work-heading h1,
