@@ -12,24 +12,34 @@ import {
   siVite,
 } from "simple-icons";
 
+const linkedinUrl =
+  "https://www.linkedin.com/in/rizki-dwi-febriansyah-s-sos-5152931a6";
+
+const navigation = [
+  { id: "about", number: "01", label: "About" },
+  { id: "work", number: "02", label: "Work" },
+  { id: "projects", number: "03", label: "Project" },
+  { id: "contact", number: "04", label: "Contact" },
+];
+
 const artworks = [
   {
     id: "01",
     title: "NIVEA MEN — Body Odor Campaign",
-    category: "Campaign",
+    category: "Campaign Visual",
     image: "assets/graphic-design/nivea-men-campaign.jpg",
     description:
       "Product-led campaign visual with a direct headline, dramatic lighting, and a clear promotional hierarchy.",
-    tags: ["Campaign Visual", "Product Design", "Social Media"],
+    tags: ["Campaign", "Product Visual", "Social Media"],
   },
   {
     id: "02",
     title: "Captain Morgan — Spiced Gold",
-    category: "Campaign",
+    category: "Campaign Visual",
     image: "assets/graphic-design/captain-morgan-campaign.jpg",
     description:
       "A cinematic product composition built around atmosphere, depth, and a warm narrative setting.",
-    tags: ["Key Visual", "Composition", "Advertising"],
+    tags: ["Key Visual", "Advertising", "Composition"],
   },
   {
     id: "03",
@@ -108,276 +118,125 @@ const webScreens = [
   },
 ];
 
-const capabilities = [
+const videos = [
   {
     id: "01",
-    title: "Graphic Design",
+    label: "Human interest edit",
+    title: "Salut Banget!! Seorang Pengamen Inspiratif yang Berjuang Sejak SMP",
     description:
-      "Campaign visuals, social media systems, poster composition, and brand-led art direction.",
-    tools: "Photoshop · Illustrator · CorelDRAW · Canva",
+      "A story-led edit shaped around resilience, emotional pacing, and a clear human arc.",
+    youtubeId: "hUufVZppXqk",
+    href: "https://youtu.be/hUufVZppXqk",
+    timecode: "01:14:08",
   },
   {
     id: "02",
-    title: "Video Editing",
+    label: "Institutional edit",
+    title: "Komunikasi dan Penyiaran Islam UIKA Bogor",
     description:
-      "Narrative pacing, human-interest stories, institutional edits, and broadcast-ready visuals.",
-    tools: "CapCut · vMix · Visual Storytelling",
-  },
-  {
-    id: "03",
-    title: "Digital Product",
-    description:
-      "UI/UX, responsive frontends, fullstack product thinking, and useful AI integration.",
-    tools: "React · JavaScript · Web Development · AI",
+      "An institutional edit balancing information, visual rhythm, and a focused academic identity.",
+    youtubeId: "B-Vnd_ngheM",
+    href: "https://youtu.be/B-Vnd_ngheM",
+    timecode: "02:09:17",
   },
 ];
 
 const skillTools = [
+  { name: "Adobe Photoshop", short: "Ps", color: "#31a8ff" },
+  { name: "Adobe Illustrator", short: "Ai", color: "#ff9a00" },
+  { name: "Canva", short: "Ca", color: "#7d72ff", variant: "canva" },
+  { name: "CorelDRAW", short: "Cd", color: "#61c454", icon: siCoreldraw },
+  { name: "CapCut", short: "Cc", color: "#f4f4ef", variant: "capcut" },
+  { name: "vMix", short: "vM", color: "#8b7cff", variant: "vmix" },
+  { name: "React", short: "Re", color: "#61dafb", icon: siReact },
+  { name: "JavaScript", short: "JS", color: "#f7df1e", icon: siJavascript },
+  { name: "HTML5", short: "H5", color: "#e34f26", icon: siHtml5 },
+  { name: "CSS", short: "C3", color: "#663399", icon: siCss },
+  { name: "Tailwind CSS", short: "Tw", color: "#06b6d4", icon: siTailwindcss },
+  { name: "Vite", short: "Vi", color: "#8b5cf6", icon: siVite },
+  { name: "GitHub", short: "Gh", color: "#f4f4ef", icon: siGithub },
+  { name: "Visual Storytelling", short: "VS", color: "#ff6b8a" },
+  { name: "AI Integration", short: "AI", color: "#55e6c1", variant: "ai" },
+  { name: "Live Streaming", short: "LS", color: "#ff5e57", variant: "live" },
+];
+
+const disciplines = [
   {
-    name: "Adobe Photoshop",
-    short: "Ps",
-    category: "Image Editing",
-    color: "#31a8ff",
+    number: "01",
+    title: "Graphic Design",
+    eyebrow: "Visual direction",
+    description:
+      "Campaign visual, social media system, poster composition, and art direction made to hold attention before the message disappears.",
+    details: ["Campaign Visual", "Poster System", "Social Media"],
+    mark: "GD",
   },
   {
-    name: "Adobe Illustrator",
-    short: "Ai",
-    category: "Vector Design",
-    color: "#ff9a00",
+    number: "02",
+    title: "Video Editing",
+    eyebrow: "Pacing and narrative",
+    description:
+      "Human-interest stories, institutional edits, and broadcast-ready visuals shaped through rhythm, sequencing, and emotional timing.",
+    details: ["Story Edit", "Editorial", "Live Production"],
+    mark: "VE",
   },
   {
-    name: "Canva",
-    short: "Ca",
-    category: "Visual Design",
-    color: "#7d72ff",
-    variant: "canva",
-  },
-  {
-    name: "CorelDRAW",
-    short: "Cd",
-    category: "Vector Design",
-    color: "#61c454",
-    icon: siCoreldraw,
-  },
-  {
-    name: "CapCut",
-    short: "Cc",
-    category: "Video Editing",
-    color: "#f4f4ef",
-    variant: "capcut",
-  },
-  {
-    name: "vMix",
-    short: "vM",
-    category: "Live Production",
-    color: "#8b7cff",
-    variant: "vmix",
-  },
-  {
-    name: "React",
-    short: "Re",
-    category: "Frontend",
-    color: "#61dafb",
-    icon: siReact,
-  },
-  {
-    name: "JavaScript",
-    short: "JS",
-    category: "Language",
-    color: "#f7df1e",
-    icon: siJavascript,
-  },
-  {
-    name: "HTML5",
-    short: "H5",
-    category: "Markup",
-    color: "#e34f26",
-    icon: siHtml5,
-  },
-  {
-    name: "CSS",
-    short: "C3",
-    category: "Styling",
-    color: "#663399",
-    icon: siCss,
-  },
-  {
-    name: "Tailwind CSS",
-    short: "Tw",
-    category: "Styling",
-    color: "#06b6d4",
-    icon: siTailwindcss,
-  },
-  {
-    name: "Vite",
-    short: "Vi",
-    category: "Build Tool",
-    color: "#8b5cf6",
-    icon: siVite,
-  },
-  {
-    name: "GitHub",
-    short: "Gh",
-    category: "Version Control",
-    color: "#f4f4ef",
-    icon: siGithub,
-  },
-  {
-    name: "Visual Storytelling",
-    short: "VS",
-    category: "Creative Direction",
-    color: "#ff6b8a",
-    variant: "story",
-  },
-  {
-    name: "AI Integration",
-    short: "AI",
-    category: "Digital Product",
-    color: "#55e6c1",
-    variant: "ai",
-  },
-  {
-    name: "Live Streaming",
-    short: "LS",
-    category: "Broadcast",
-    color: "#ff5e57",
-    variant: "live",
+    number: "03",
+    title: "Web & Product",
+    eyebrow: "Experience and build",
+    description:
+      "From UI/UX and frontend implementation to full product thinking and useful AI integration for real user needs.",
+    details: ["UI/UX", "Web App", "AI Integration"],
+    mark: "DP",
   },
 ];
 
-const experiences = [
+const projectCategories = [
   {
-    period: "2026 — Present",
-    role: "AI Engineer Program",
-    company: "Pijak × IBM SkillsBuild",
-    note: "Applied AI learning and product exploration.",
+    id: "graphic",
+    number: "01",
+    title: "Graphic Design",
+    type: "Visual archive",
+    description: "Campaign, poster, product, and social media visual work.",
+    image: "assets/graphic-design/matchday-campaign.jpg",
+    count: "06 selected works",
   },
   {
-    period: "Sep — Dec 2025",
-    role: "Videographer",
-    company: "Republika Online",
-    note: "Professional media workflow, visual journalism, and live-stream production with vMix.",
+    id: "webapp",
+    number: "02",
+    title: "Web App",
+    type: "Digital product",
+    description: "IMAN IN MOTION, a mood-based Islamic film discovery product.",
+    image: "assets/iman-in-motion/06-mood-pathway.jpg",
+    count: "01 case study",
   },
   {
-    period: "May — Jun 2025",
-    role: "Graphic Designer · Project-Based",
-    company: "NIVEA MEN",
-    note: "Digital campaign visuals aligned with product communication and brand direction.",
-  },
-  {
-    period: "2024 — 2025",
-    role: "Social Media Manager",
-    company: "PT Menata Visual Utama",
-    note: "Content strategy, creative direction, publishing, and performance evaluation.",
-  },
-  {
-    period: "2022 — 2024",
-    role: "Social Media Coordinator",
-    company: "PT Frisian Flag Indonesia",
-    note: "Social content coordination and visual communication support.",
+    id: "video",
+    number: "03",
+    title: "Video Editing",
+    type: "Cinematic reel",
+    description: "Two story-led edits built around pacing, clarity, and feeling.",
+    image: "https://i.ytimg.com/vi/hUufVZppXqk/hqdefault.jpg",
+    count: "02 selected edits",
   },
 ];
 
-const certifications = [
-  {
-    title: "Membangun Aplikasi Gen AI dengan Microsoft Azure",
-    issuer: "Dicoding Indonesia",
-    date: "Feb 2026",
-  },
-  {
-    title: "Belajar Machine Learning untuk Pemula",
-    issuer: "Dicoding Indonesia",
-    date: "Feb 2026",
-  },
-  {
-    title: "Belajar Dasar AI",
-    issuer: "Dicoding Indonesia",
-    date: "Feb 2026",
-  },
-  {
-    title: "Belajar Penerapan Data Science dengan Microsoft Fabric",
-    issuer: "Dicoding Indonesia",
-    date: "Feb 2026",
-  },
-  {
-    title: "Memulai Pemrograman dengan Python",
-    issuer: "Dicoding Indonesia",
-    date: "Feb 2026",
-  },
-  {
-    title: "Belajar Dasar Git dengan GitHub",
-    issuer: "Dicoding Indonesia",
-    date: "Jan 2026",
-  },
-];
-
-const filters = [
-  "All",
-  "Poster",
-  "Social Media",
-  "Campaign",
-  "Brand Visual",
-];
-
-const linkedinUrl =
-  "https://www.linkedin.com/in/rizki-dwi-febriansyah-s-sos-5152931a6";
-
-const primaryNavigation = [
-  { id: "about", number: "01", label: "About" },
-  { id: "work", number: "02", label: "Work" },
-  { id: "web-project", number: "03", label: "Web" },
-  { id: "contact", number: "04", label: "Contact" },
+const gravityMarks = [
+  { label: "RDF", x: "7%", y: "20%", delay: "-1.8s", size: "small" },
+  { label: "01", x: "82%", y: "14%", delay: "-3.4s", size: "small" },
+  { label: "✦", x: "90%", y: "62%", delay: "-5s", size: "medium" },
+  { label: "AI", x: "12%", y: "78%", delay: "-2.5s", size: "small" },
+  { label: "03", x: "73%", y: "83%", delay: "-4.2s", size: "small" },
 ];
 
 function Arrow({ diagonal = false }) {
   return <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>;
 }
 
-function Tilt({ children, className = "" }) {
-  const onMove = (event) => {
-    if (
-      window.matchMedia("(pointer: coarse)").matches ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    )
-      return;
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-    event.currentTarget.style.setProperty("--rx", `${y * -5}deg`);
-    event.currentTarget.style.setProperty("--ry", `${x * 6}deg`);
-    event.currentTarget.style.setProperty("--mx", `${(x + 0.5) * 100}%`);
-    event.currentTarget.style.setProperty("--my", `${(y + 0.5) * 100}%`);
-  };
-
-  const reset = (event) => {
-    event.currentTarget.style.setProperty("--rx", "0deg");
-    event.currentTarget.style.setProperty("--ry", "0deg");
-  };
-
-  return (
-    <div
-      className={`tilt ${className}`}
-      onPointerMove={onMove}
-      onPointerLeave={reset}
-    >
-      {children}
-    </div>
-  );
-}
-
-function SectionLabel({ number, children }) {
-  return (
-    <div className="section-label">
-      <span>{number}</span>
-      <p>{children}</p>
-    </div>
-  );
-}
-
 function SkillMark({ tool }) {
   return (
     <span
-      className={`skill-logo ${tool.variant ? `is-${tool.variant}` : ""}`}
+      className={`skill-mark ${tool.variant ? `is-${tool.variant}` : ""}`}
+      style={{ "--tool-color": tool.color }}
       aria-hidden="true"
     >
       {tool.icon ? (
@@ -391,953 +250,497 @@ function SkillMark({ tool }) {
   );
 }
 
-function AboutProfile() {
-  return (
-    <section id="about-profile" className="about-section section-space">
-      <div className="shell about-intro-grid">
-        <div className="reveal">
-          <SectionLabel number="01">About Profile</SectionLabel>
-          <p className="about-index-note">
-            Creative communication, visual craft, and digital product thinking.
-          </p>
-        </div>
+function Loader({ onComplete }) {
+  const [progress, setProgress] = useState(1);
 
-        <div className="about-copy reveal">
-          <h2>Built for visuals that stay with you.</h2>
-          <p className="about-lead">
-            Rizki Dwi Febriansyah, S.Sos. is a Visual Specialist focused on
-            graphic design, video editing, visual storytelling, and digital
-            innovation.
-          </p>
-          <p>
-            With a Communication and Islamic Broadcasting background from
-            Universitas Ibn Khaldun Bogor, he approaches every visual as a
-            communication problem first, then brings design, motion, product
-            thinking, and technology together to solve it.
-          </p>
-          <div className="education-line">
-            <span>Education</span>
-            <strong>S.Sos. · Universitas Ibn Khaldun Bogor</strong>
-            <small>2022—2026 · GPA 3.57</small>
-          </div>
-          <div className="about-intro-actions">
-            <a href="#profile">
-              Experience & certifications <Arrow />
-            </a>
-            <a href={linkedinUrl} target="_blank" rel="noreferrer">
-              LinkedIn profile <Arrow diagonal />
-            </a>
-          </div>
+  useEffect(() => {
+    let frame;
+    const startedAt = performance.now();
+
+    const tick = (now) => {
+      const next = Math.min(100, Math.max(1, Math.ceil(((now - startedAt) / 5000) * 100)));
+      setProgress(next);
+      if (next < 100) {
+        frame = requestAnimationFrame(tick);
+      } else {
+        onComplete();
+      }
+    };
+
+    frame = requestAnimationFrame(tick);
+    return () => {
+      cancelAnimationFrame(frame);
+    };
+  }, [onComplete]);
+
+  return (
+    <div className="loader-screen" aria-live="polite" aria-label="Loading portfolio">
+      <div className="loader-glow loader-glow-one" />
+      <div className="loader-glow loader-glow-two" />
+      <div className="loader-content">
+        <div className="loader-brand">
+          <span>RDF</span>
+          <p>Visual portfolio system</p>
         </div>
+        <div className="loader-counter">{String(progress).padStart(3, "0")}</div>
+        <div className="loader-line"><i style={{ transform: `scaleX(${progress / 100})` }} /></div>
+        <p className="loader-copy">Calibrating creative field</p>
+      </div>
+      <span className="loader-corner loader-corner-left">01–100</span>
+      <span className="loader-corner loader-corner-right">2026 / BOGOR</span>
+    </div>
+  );
+}
+
+function ScrambleValue({ value, label }) {
+  const [display, setDisplay] = useState(value);
+
+  useEffect(() => {
+    let interval;
+    const startedAt = performance.now();
+    const scramble = () =>
+      Array.from(value, (character) => {
+        if (/\d/.test(character)) return String(Math.floor(Math.random() * 10));
+        if (character === "+" || character === ".") return character;
+        return character;
+      }).join("");
+
+    const update = () => {
+      if (performance.now() - startedAt > 1250) {
+        setDisplay(value);
+        window.clearInterval(interval);
+        return;
+      }
+      setDisplay(scramble());
+    };
+
+    setDisplay(scramble());
+    interval = window.setInterval(update, 55);
+    return () => window.clearInterval(interval);
+  }, [value]);
+
+  return (
+    <div className="stat-card">
+      <strong aria-label={`${value} ${label}`}>{display}</strong>
+      <span>{label}</span>
+    </div>
+  );
+}
+
+function GravityField() {
+  return (
+    <div className="gravity-field" aria-hidden="true">
+      {gravityMarks.map((mark) => (
+        <span
+          key={`${mark.label}-${mark.x}`}
+          className={`gravity-track gravity-${mark.size}`}
+          style={{
+            "--mark-x": mark.x,
+            "--mark-y": mark.y,
+            "--mark-delay": mark.delay,
+          }}
+        >
+          <i>{mark.label}</i>
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function Header({ activePage, onNavigate }) {
+  const activeNav = ["graphic", "webapp", "video"].includes(activePage)
+    ? "projects"
+    : activePage;
+
+  return (
+    <header className="app-header">
+      <button className="brand-lockup" type="button" onClick={() => onNavigate("about")}>
+        <span className="brand-avatar">
+          <img src="assets/profile/rizki-dwi-febriansyah.png" alt="" />
+        </span>
+        <span>
+          <strong>Rizki Dwi Febriansyah</strong>
+          <small>Visual Specialist</small>
+        </span>
+      </button>
+
+      <nav className="primary-nav" aria-label="Primary navigation">
+        {navigation.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            className={activeNav === item.id ? "active" : ""}
+            onClick={() => onNavigate(item.id)}
+            aria-current={activeNav === item.id ? "page" : undefined}
+          >
+            <span>{item.number}</span>
+            {item.label}
+          </button>
+        ))}
+      </nav>
+
+      <a className="header-contact" href="mailto:rizkidwifrb@gmail.com">
+        <span>Let&apos;s talk</span>
+        <Arrow diagonal />
+      </a>
+    </header>
+  );
+}
+
+function AboutView() {
+  return (
+    <section className="view view-about" aria-labelledby="about-title">
+      <div className="view-topline">
+        <span>01 / About</span>
+        <p>Creative communication, visual craft, and digital product thinking.</p>
       </div>
 
-      <div className="shell about-profile-sheet reveal">
-        <article className="profile-sheet-block">
-          <span>01 / Strengths</span>
-          <h3>What I bring</h3>
-          <ul>
-            <li>
-              <strong>Cross-disciplinary execution</strong>
-              <small>Design, motion, product, and technology in one workflow.</small>
-            </li>
-            <li>
-              <strong>End-to-end ownership</strong>
-              <small>From research and concept to interface, build, and delivery.</small>
-            </li>
-            <li>
-              <strong>Communication-first thinking</strong>
-              <small>Visual decisions are grounded in audience, message, and purpose.</small>
-            </li>
-            <li>
-              <strong>Learning agility</strong>
-              <small>Comfortable moving between creative craft and emerging technology.</small>
-            </li>
-          </ul>
-        </article>
+      <div className="about-layout">
+        <div className="about-intro">
+          <p className="eyebrow">Hi, I&apos;m Rizki.</p>
+          <h1 id="about-title">Visual work with a point of view.</h1>
+          <p className="lead">
+            Rizki Dwi Febriansyah, S.Sos. is a Visual Specialist focused on graphic design,
+            video editing, visual storytelling, and digital innovation.
+          </p>
+          <p className="body-copy">
+            A communication-first background informs the process. Every output starts with audience,
+            purpose, and message, then brings craft, motion, and technology together.
+          </p>
 
-        <article className="profile-sheet-block">
-          <span>02 / Growth Areas</span>
-          <h3>How I improve</h3>
-          <ul>
-            <li>
-              <strong>Detail bias</strong>
-              <small>I can refine too deeply, so I use time-boxing and clear approval points.</small>
-            </li>
-            <li>
-              <strong>Wide creative scope</strong>
-              <small>I manage multidisciplinary ideas with priorities, milestones, and one core objective.</small>
-            </li>
-            <li>
-              <strong>Delegation discipline</strong>
-              <small>I am improving how I document decisions and hand work off earlier.</small>
-            </li>
-          </ul>
-        </article>
+          <div className="stats-row" aria-label="Portfolio statistics">
+            <ScrambleValue value="03" label="creative disciplines" />
+            <ScrambleValue value="06" label="design works" />
+            <ScrambleValue value="696+" label="curated films" />
+            <ScrambleValue value="3.57" label="academic GPA" />
+          </div>
+        </div>
 
-        <article className="profile-sheet-block skills-block">
-          <span>03 / Skills</span>
-          <h3>Creative stack</h3>
-          <div className="about-skills">
-            {[
-              "Graphic Design",
-              "Video Editing",
-              "Visual Storytelling",
-              "UI/UX Design",
-              "Art Direction",
-              "Social Media",
-              "Frontend Development",
-              "Fullstack Development",
-              "AI Integration",
-              "Live Streaming",
-            ].map((skill) => (
-              <span key={skill}>{skill}</span>
-            ))}
+        <article className="identity-card">
+          <div className="identity-photo">
+            <img
+              src="assets/profile/rizki-dwi-febriansyah.png"
+              alt="Rizki Dwi Febriansyah, S.Sos."
+            />
+            <span className="identity-line" />
+          </div>
+          <div className="identity-footer">
+            <span>RDF / CREATIVE ID</span>
+            <strong>Design · Motion · Digital</strong>
           </div>
         </article>
 
-        <article className="profile-sheet-block reach-block">
-          <span>04 / Reach Me</span>
-          <h3>Open a conversation</h3>
-          <div className="about-contact-list">
-            <a href="mailto:rizkidwifrb@gmail.com">
-              <span>Email</span>
-              <strong>rizkidwifrb@gmail.com</strong>
-              <Arrow diagonal />
-            </a>
-            <a href="https://wa.me/6289682218382" target="_blank" rel="noreferrer">
-              <span>WhatsApp</span>
-              <strong>+62 896-8221-8382</strong>
-              <Arrow diagonal />
-            </a>
-            <a href="https://www.instagram.com/uwiberani/" target="_blank" rel="noreferrer">
-              <span>Instagram</span>
-              <strong>@uwiberani</strong>
-              <Arrow diagonal />
-            </a>
-            <a href={linkedinUrl} target="_blank" rel="noreferrer">
-              <span>LinkedIn</span>
-              <strong>Rizki Dwi Febriansyah</strong>
-              <Arrow diagonal />
-            </a>
-          </div>
-          <div className="about-availability">
-            <div><span>Based in</span><strong>Bogor, Indonesia</strong></div>
-            <div><span>Focus</span><strong>Visual & Digital Creative</strong></div>
-            <div><span>Status</span><strong>Open to selected opportunities</strong></div>
-          </div>
-        </article>
+        <div className="about-side">
+          <article className="trait-card">
+            <div>
+              <span>Strengths</span>
+              <strong>Cross-disciplinary execution.</strong>
+              <p>Design, motion, product, and technology in one working flow.</p>
+            </div>
+            <div>
+              <span>Growth area</span>
+              <strong>Detail needs direction.</strong>
+              <p>Time-boxing and clear approval points keep refinement useful.</p>
+            </div>
+          </article>
+
+          <article className="tool-panel">
+            <div className="tool-panel-title">
+              <span>Creative stack</span>
+              <small>{skillTools.length} tools</small>
+            </div>
+            <div className="tool-grid" aria-label="Creative and digital tools">
+              {skillTools.map((tool) => (
+                <div key={tool.name} className="tool-item" title={tool.name}>
+                  <SkillMark tool={tool} />
+                  <span>{tool.name}</span>
+                </div>
+              ))}
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   );
 }
 
-export default function Home() {
-  const [activeFilter, setActiveFilter] = useState("All");
-  const [activeArtwork, setActiveArtwork] = useState(null);
-  const [activeSection, setActiveSection] = useState("about");
-  const portraitRef = useRef(null);
-  const scrollProgressRef = useRef(null);
-  const modalCloseRef = useRef(null);
-  const artworkTriggerRef = useRef(null);
+function WorkView() {
+  return (
+    <section className="view view-work" aria-labelledby="work-title">
+      <div className="view-topline">
+        <span>02 / Work</span>
+        <p>Three ways of turning a message into something people can feel.</p>
+      </div>
+
+      <div className="work-heading">
+        <p className="eyebrow">What I do</p>
+        <h1 id="work-title">One creative practice. Three distinct disciplines.</h1>
+      </div>
+
+      <div className="discipline-grid">
+        {disciplines.map((discipline, index) => (
+          <article className="discipline-card" key={discipline.title} style={{ "--discipline-index": index }}>
+            <div className="discipline-top">
+              <span>{discipline.number}</span>
+              <i>{discipline.mark}</i>
+            </div>
+            <div>
+              <p>{discipline.eyebrow}</p>
+              <h2>{discipline.title}</h2>
+              <strong>{discipline.description}</strong>
+            </div>
+            <div className="discipline-tags">
+              {discipline.details.map((detail) => <span key={detail}>{detail}</span>)}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ProjectsView({ onOpenProject }) {
+  return (
+    <section className="view view-projects" aria-labelledby="projects-title">
+      <div className="view-topline">
+        <span>03 / Project</span>
+        <p>Select a field to enter its dedicated portfolio page.</p>
+      </div>
+
+      <div className="project-heading">
+        <div>
+          <p className="eyebrow">Selected work</p>
+          <h1 id="projects-title">Pick a world to explore.</h1>
+        </div>
+        <p>Every category opens its own focused viewing space. No mixed archive, no long scroll.</p>
+      </div>
+
+      <div className="project-choice-grid">
+        {projectCategories.map((project, index) => (
+          <button
+            key={project.id}
+            type="button"
+            className="project-choice"
+            onClick={() => onOpenProject(project.id)}
+            style={{ "--project-index": index }}
+          >
+            <img src={project.image} alt="" loading={index === 0 ? "eager" : "lazy"} />
+            <span className="project-overlay" />
+            <span className="project-choice-top">
+              <small>{project.number}</small>
+              <small>{project.count}</small>
+            </span>
+            <span className="project-choice-copy">
+              <small>{project.type}</small>
+              <strong>{project.title}</strong>
+              <em>{project.description}</em>
+            </span>
+            <span className="project-choice-arrow"><Arrow diagonal /></span>
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function DetailControls({ current, total, onPrevious, onNext }) {
+  return (
+    <div className="detail-controls">
+      <span>{String(current + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</span>
+      <div>
+        <button type="button" onClick={onPrevious} aria-label="Previous project">←</button>
+        <button type="button" onClick={onNext} aria-label="Next project">→</button>
+      </div>
+    </div>
+  );
+}
+
+function ProjectDetailView({ type, onBack }) {
+  const [index, setIndex] = useState(0);
+  const isGraphic = type === "graphic";
+  const isWeb = type === "webapp";
+  const collection = isGraphic ? artworks : isWeb ? webScreens : videos;
+  const item = collection[index];
+  const title = isGraphic ? "Graphic Design" : isWeb ? "IMAN IN MOTION" : "Video Editing";
+  const sectionLabel = isGraphic ? "Visual archive" : isWeb ? "Digital product case study" : "Cinematic reel";
+
+  const previous = () => setIndex((current) => (current - 1 + collection.length) % collection.length);
+  const next = () => setIndex((current) => (current + 1) % collection.length);
+
+  return (
+    <section className="view view-detail" aria-labelledby="detail-title">
+      <div className="view-topline detail-topline">
+        <button className="back-button" type="button" onClick={onBack}>← Back to project</button>
+        <p>{sectionLabel}</p>
+      </div>
+
+      <div className="detail-layout">
+        <div className={`detail-media ${isWeb ? "is-web" : ""} ${type === "video" ? "is-video" : ""}`}>
+          {type === "video" ? (
+            <iframe
+              key={item.youtubeId}
+              src={`https://www.youtube.com/embed/${item.youtubeId}?rel=0`}
+              title={item.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          ) : (
+            <img src={item.image} alt={item.title} />
+          )}
+          <span className="media-frame" />
+          <span className="detail-orbit orbit-one" />
+          <span className="detail-orbit orbit-two" />
+        </div>
+
+        <article className="detail-copy">
+          <div>
+            <p className="eyebrow">{sectionLabel}</p>
+            <h1 id="detail-title">{isWeb ? "IMAN IN MOTION" : item.title}</h1>
+            <p className="detail-lead">
+              {isWeb
+                ? "A mood-based Islamic film discovery web app for digital Islamic literacy."
+                : item.description || item.label}
+            </p>
+          </div>
+
+          {isGraphic && (
+            <div className="detail-tags">
+              {item.tags.map((tag) => <span key={tag}>{tag}</span>)}
+            </div>
+          )}
+
+          {isWeb && (
+            <div className="product-facts">
+              <span><strong>696+</strong> curated films</span>
+              <span><strong>06</strong> mood pathways</span>
+              <span><strong>AIMAN</strong> AI chatbot</span>
+              <span><strong>HKI</strong> protected work</span>
+            </div>
+          )}
+
+          {type === "video" && (
+            <a className="external-button" href={item.href} target="_blank" rel="noreferrer">
+              Watch on YouTube <Arrow diagonal />
+            </a>
+          )}
+
+          {isGraphic && (
+            <a className="external-button" href="https://www.instagram.com/uwiberani/" target="_blank" rel="noreferrer">
+              View source archive <Arrow diagonal />
+            </a>
+          )}
+
+          {isWeb && (
+            <a className="external-button" href="https://iman-in-motion.web.id" target="_blank" rel="noreferrer">
+              Visit live product <Arrow diagonal />
+            </a>
+          )}
+
+          <DetailControls current={index} total={collection.length} onPrevious={previous} onNext={next} />
+        </article>
+      </div>
+      <p className="detail-caption">{item.id} / {isWeb ? item.title : isGraphic ? item.category : item.label}</p>
+    </section>
+  );
+}
+
+function ContactView() {
+  const contacts = [
+    { label: "Email", value: "rizkidwifrb@gmail.com", href: "mailto:rizkidwifrb@gmail.com" },
+    { label: "WhatsApp", value: "+62 896-8221-8382", href: "https://wa.me/6289682218382" },
+    { label: "Instagram", value: "@uwiberani", href: "https://www.instagram.com/uwiberani/" },
+    { label: "LinkedIn", value: "Rizki Dwi Febriansyah", href: linkedinUrl },
+  ];
+
+  return (
+    <section className="view view-contact" aria-labelledby="contact-title">
+      <div className="view-topline">
+        <span>04 / Contact</span>
+        <p>Available for selected creative and digital opportunities.</p>
+      </div>
+      <div className="contact-layout">
+        <div className="contact-hero">
+          <p className="eyebrow">Open a conversation</p>
+          <h1 id="contact-title">Let&apos;s make something move.</h1>
+          <p>For roles, projects, and ideas that need a clear visual point of view.</p>
+        </div>
+        <div className="contact-grid">
+          {contacts.map((contact, index) => (
+            <a key={contact.label} href={contact.href} target={contact.href.startsWith("http") ? "_blank" : undefined} rel={contact.href.startsWith("http") ? "noreferrer" : undefined}>
+              <span>{String(index + 1).padStart(2, "0")} / {contact.label}</span>
+              <strong>{contact.value}</strong>
+              <Arrow diagonal />
+            </a>
+          ))}
+        </div>
+      </div>
+      <footer className="view-footer">
+        <span>Rizki Dwi Febriansyah, S.Sos.</span>
+        <span>Visual Specialist · Bogor, Indonesia</span>
+      </footer>
+    </section>
+  );
+}
+
+export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [activePage, setActivePage] = useState("about");
+  const appRef = useRef(null);
 
   useEffect(() => {
-    const nodes = Array.from(document.querySelectorAll(".reveal"));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 },
-    );
-    nodes.forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const close = (event) => {
-      if (event.key === "Escape") {
-        setActiveArtwork(null);
+    const onKeyDown = (event) => {
+      if (event.key === "Escape" && ["graphic", "webapp", "video"].includes(activePage)) {
+        setActivePage("projects");
       }
     };
-    window.addEventListener("keydown", close);
-    document.body.style.overflow = activeArtwork ? "hidden" : "";
-    if (activeArtwork) {
-      requestAnimationFrame(() => modalCloseRef.current?.focus());
-    } else {
-      artworkTriggerRef.current?.focus();
-    }
-    return () => {
-      window.removeEventListener("keydown", close);
-      document.body.style.overflow = "";
-    };
-  }, [activeArtwork]);
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [activePage]);
 
-  useEffect(() => {
-    const sections = primaryNavigation
-      .map(({ id }) => document.getElementById(id))
-      .filter(Boolean);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target?.id) setActiveSection(visible.target.id);
-      },
-      { rootMargin: "-25% 0px -58% 0px", threshold: [0, 0.1, 0.25] },
-    );
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const updateProgress = () => {
-      const scrollable =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
-      scrollProgressRef.current?.style.setProperty(
-        "--scroll-progress",
-        Math.min(1, Math.max(0, progress)),
-      );
-    };
-
-    updateProgress();
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    window.addEventListener("resize", updateProgress);
-    return () => {
-      window.removeEventListener("scroll", updateProgress);
-      window.removeEventListener("resize", updateProgress);
-    };
-  }, []);
-
-  const movePortrait = (event) => {
+  const moveGravity = (event) => {
     if (
       window.matchMedia("(pointer: coarse)").matches ||
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    )
-      return;
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-    portraitRef.current?.style.setProperty("--px", `${x * 18}px`);
-    portraitRef.current?.style.setProperty("--py", `${y * 18}px`);
+    ) return;
+
+    const rect = appRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = ((event.clientX - rect.left) / rect.width - 0.5).toFixed(3);
+    const y = ((event.clientY - rect.top) / rect.height - 0.5).toFixed(3);
+    appRef.current?.style.setProperty("--gravity-x", x);
+    appRef.current?.style.setProperty("--gravity-y", y);
   };
 
-  const filteredArtworks =
-    activeFilter === "All"
-      ? artworks
-      : artworks.filter((artwork) => artwork.category === activeFilter);
+  const resetGravity = () => {
+    appRef.current?.style.setProperty("--gravity-x", "0");
+    appRef.current?.style.setProperty("--gravity-y", "0");
+  };
+
+  const renderView = () => {
+    if (activePage === "about") return <AboutView />;
+    if (activePage === "work") return <WorkView />;
+    if (activePage === "projects") return <ProjectsView onOpenProject={setActivePage} />;
+    if (activePage === "graphic" || activePage === "webapp" || activePage === "video") {
+      return <ProjectDetailView type={activePage} onBack={() => setActivePage("projects")} />;
+    }
+    return <ContactView />;
+  };
 
   return (
-    <main id="top">
-      <div className="page-grid" aria-hidden="true" />
-
-      <header className="site-header">
-        <a className="brand" href="#about" aria-label="Go to About Rizki">
-          <span className="brand-avatar">
-            <img
-              src="assets/profile/rizki-dwi-febriansyah.png"
-              alt=""
-              aria-hidden="true"
-            />
-          </span>
-          <span className="brand-copy">
-            <strong>Rizki Dwi Febriansyah, S.Sos.</strong>
-            <small>Visual Specialist · Bogor</small>
-          </span>
-        </a>
-
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          {primaryNavigation.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={activeSection === item.id ? "active" : ""}
-              aria-current={activeSection === item.id ? "page" : undefined}
-            >
-              <span>{item.number}</span>
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        <a className="header-cta" href="mailto:rizkidwifrb@gmail.com">
-          Contact me <Arrow diagonal />
-        </a>
-
-        <a className="mobile-mail" href="mailto:rizkidwifrb@gmail.com">
-          Hire me <Arrow diagonal />
-        </a>
-
-        <span
-          ref={scrollProgressRef}
-          className="scroll-progress"
-          aria-hidden="true"
-        />
-      </header>
-
-      <nav className="mobile-dock" aria-label="Mobile navigation">
-        {primaryNavigation.map((item) => (
-          <a
-            key={item.id}
-            href={`#${item.id}`}
-            className={activeSection === item.id ? "active" : ""}
-            aria-current={activeSection === item.id ? "page" : undefined}
-          >
-            <span>{item.number}</span>
-            <strong>{item.label}</strong>
-          </a>
-        ))}
-      </nav>
-
-      <section id="about" className="hero about-hero shell">
-        <div className="hero-copy reveal visible">
-          <div className="hero-heading">
-            <div className="hero-kicker">
-              <span className="status-dot" />
-              <span>About Rizki · Bogor, Indonesia</span>
-              <span className="hero-year">Open to opportunities</span>
-            </div>
-
-            <h1>
-              <span className="hero-greeting">Hi, I&apos;m Rizki.</span>
-              <span>Visual</span>
-              <span className="outlined">specialist.</span>
-            </h1>
-          </div>
-
-          <div className="hero-bottom">
-            <div className="hero-intro">
-              <strong>Rizki Dwi Febriansyah, S.Sos.</strong>
-              <p>
-                Graphic Designer, Video Editor, and Digital Creative creating
-                visuals that move people and stay with them.
-              </p>
-              <small>
-                S.Sos. · Universitas Ibn Khaldun Bogor · GPA 3.57
-              </small>
-            </div>
-            <div className="hero-actions">
-              <a className="button light" href="#work">
-                View selected work <Arrow diagonal />
-              </a>
-              <a className="text-link" href="#about-profile">
-                Explore my profile <Arrow />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className="hero-portrait-wrap reveal visible"
-          onPointerMove={movePortrait}
-          onPointerLeave={() => {
-            portraitRef.current?.style.setProperty("--px", "0px");
-            portraitRef.current?.style.setProperty("--py", "0px");
-          }}
-        >
-          <div className="portrait-code">RDF—01</div>
-          <div className="hero-nametag" aria-label="Rizki creative identity">
-            <div className="nametag-top">
-              <span>Creative ID</span>
-              <small>RDF / 026</small>
-            </div>
-            <strong>Rizki Dwi<br />Febriansyah</strong>
-            <p>Visual Specialist</p>
-          </div>
-          <a
-            ref={portraitRef}
-            className="hero-portrait"
-            href="#about-profile"
-            aria-label="Open Rizki's profile details"
-          >
-            <img
-              src="assets/profile/rizki-dwi-febriansyah.png"
-              alt="Rizki Dwi Febriansyah, S.Sos."
-            />
-            <div className="portrait-gradient" />
-            <span className="portrait-name">
-              <small>Design · Motion · Digital</small>
-              <strong>Rizki Dwi Febriansyah</strong>
-            </span>
-            <span className="portrait-about-cta">
-              View profile <Arrow diagonal />
-            </span>
-          </a>
-          <div className="portrait-tag tag-two">
-            <span>NOW EXPLORING</span>
-            <strong>Design × Motion × AI</strong>
-          </div>
-          <div className="portrait-cross cross-one">+</div>
-          <div className="portrait-cross cross-two">+</div>
-        </div>
-
-        <div className="hero-rail">
-          <span>Scroll to explore</span>
-          <i />
-          <span>03 disciplines · 01 point of view</span>
-        </div>
-      </section>
-
-      <section className="proof-strip" aria-label="Portfolio facts">
-        <div className="shell proof-grid">
-          <div>
-            <strong>03</strong>
-            <span>Creative disciplines</span>
-          </div>
-          <div>
-            <strong>06</strong>
-            <span>Original design works</span>
-          </div>
-          <div>
-            <strong>696+</strong>
-            <span>Films curated in IMAN IN MOTION</span>
-          </div>
-          <div>
-            <strong>3.57</strong>
-            <span>Academic GPA · S.Sos.</span>
-          </div>
-        </div>
-      </section>
-
-      <AboutProfile />
-
-      <section id="work" className="selected-work shell section-space">
-        <div className="section-head reveal">
-          <SectionLabel number="02">Selected Work</SectionLabel>
-          <h2>One visual mind. Three ways to make an impact.</h2>
-        </div>
-
-        <div className="work-index">
-          <article className="work-row reveal">
-            <div className="work-number">01</div>
-            <div className="work-copy">
-              <span>Graphic Design</span>
-              <h3>Visuals built to stop the scroll.</h3>
-              <p>
-                Campaign composition, poster systems, product visuals, and
-                brand-led social content.
-              </p>
-              <div className="micro-tags">
-                <span>Poster</span>
-                <span>Campaign</span>
-                <span>Social Media</span>
-              </div>
-              <a href="#graphic-design">
-                Explore design archive <Arrow diagonal />
-              </a>
-            </div>
-            <Tilt className="work-media design-stack">
-              <img
-                src="assets/graphic-design/matchday-campaign.jpg"
-                alt="Matchday graphic design by Rizki"
-                loading="lazy"
-              />
-              <img
-                src="assets/graphic-design/nivea-men-campaign.jpg"
-                alt="NIVEA MEN campaign graphic by Rizki"
-                loading="lazy"
-              />
-            </Tilt>
-          </article>
-
-          <article className="work-row reverse reveal">
-            <div className="work-number">02</div>
-            <div className="work-copy">
-              <span>Video Editing</span>
-              <h3>Edits with rhythm, clarity, and feeling.</h3>
-              <p>
-                Human-interest storytelling and institutional video shaped
-                through pace, sequencing, and visual focus.
-              </p>
-              <div className="micro-tags">
-                <span>Story Edit</span>
-                <span>Editorial</span>
-                <span>YouTube</span>
-              </div>
-              <a href="#video-editing">
-                Watch selected edits <Arrow diagonal />
-              </a>
-            </div>
-            <Tilt className="work-media video-cover">
-              <img
-                src="https://i.ytimg.com/vi/hUufVZppXqk/hqdefault.jpg"
-                alt="Video editing project preview"
-                loading="lazy"
-                referrerPolicy="no-referrer"
-                onError={(event) => {
-                  event.currentTarget.onerror = null;
-                  event.currentTarget.src =
-                    "https://i.ytimg.com/vi/hUufVZppXqk/mqdefault.jpg";
-                }}
-              />
-              <span className="play-disc">▶</span>
-              <span className="timecode">00:01:14:08</span>
-              <div className="edit-track">
-                <i />
-                <i />
-                <i />
-                <i />
-              </div>
-            </Tilt>
-          </article>
-
-          <article className="work-row reveal">
-            <div className="work-number">03</div>
-            <div className="work-copy">
-              <span>Web Project</span>
-              <h3>Digital experience with a reason to exist.</h3>
-              <p>
-                A mood-based Islamic film discovery product combining
-                research, interface design, fullstack development, and AI.
-              </p>
-              <div className="micro-tags">
-                <span>UI/UX</span>
-                <span>Fullstack</span>
-                <span>AI Integration</span>
-              </div>
-              <a href="#web-project">
-                Read the case study <Arrow diagonal />
-              </a>
-            </div>
-            <Tilt className="work-media web-cover">
-              <img
-                src="assets/iman-in-motion/06-mood-pathway.jpg"
-                alt="IMAN IN MOTION mood discovery screen"
-                loading="lazy"
-              />
-              <div className="web-cover-note">
-                <span>Original product screenshot</span>
-                <strong>03:04</strong>
-              </div>
-            </Tilt>
-          </article>
-        </div>
-      </section>
-
-      <section id="web-project" className="web-case section-space">
-        <div className="shell">
-          <div className="case-header reveal">
-            <SectionLabel number="03">Only Web Project</SectionLabel>
-            <div className="case-title">
-              <p>Mood-Based Islamic Film Discovery Web App</p>
-              <h2>IMAN IN<br />MOTION</h2>
-              <a
-                className="button light"
-                href="https://iman-in-motion.web.id"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit live product <Arrow diagonal />
-              </a>
-            </div>
-          </div>
-
-          <div className="case-overview reveal">
-            <p>
-              A digital product that starts with how people feel—not a genre
-              dropdown. IMAN IN MOTION connects mood, film, Islamic literacy,
-              and AI-assisted reflection in one focused experience.
-            </p>
-            <div className="case-facts">
-              <div><strong>696+</strong><span>curated films</span></div>
-              <div><strong>06</strong><span>mood pathways</span></div>
-              <div><strong>AIMAN</strong><span>AI chatbot</span></div>
-              <div><strong>HKI</strong><span>No. 001241778</span></div>
-            </div>
-          </div>
-
-          <div className="role-ticker reveal" aria-label="Roles on IMAN IN MOTION">
-            {[
-              "Founder",
-              "Product Owner",
-              "Fullstack Developer",
-              "UI/UX Designer",
-              "Graphic Designer",
-              "AI Integrator",
-              "Researcher",
-            ].map((role) => (
-              <span key={role}>{role}</span>
-            ))}
-          </div>
-
-          <div className="iim-gallery">
-            {webScreens.map((screen, index) => (
-              <figure
-                key={screen.id}
-                className={`iim-shot reveal ${index === 0 || index === 3 ? "offset" : ""}`}
-              >
-                <div className="screen-frame">
-                  <div className="screen-chrome">
-                    <i />
-                    <i />
-                    <i />
-                    <span>iman-in-motion.web.id</span>
-                  </div>
-                  <img src={screen.image} alt={`IMAN IN MOTION — ${screen.title}`} loading="lazy" />
-                </div>
-                <figcaption>
-                  <span>{screen.id}</span>
-                  <div>
-                    <strong>{screen.title}</strong>
-                    <small>{screen.label}</small>
-                  </div>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-
-          <div className="case-narrative reveal">
-            <article>
-              <span>01 / The Challenge</span>
-              <h3>Discovery usually starts from category. People often start from emotion.</h3>
-              <p>
-                The product needed to make Islamic film discovery personal,
-                approachable, and relevant to the habits of younger digital
-                audiences.
-              </p>
-            </article>
-            <article>
-              <span>02 / The Solution</span>
-              <h3>A guided path from mood to film, reflection, and deeper literacy.</h3>
-              <p>
-                Six mood pathways, curated recommendations, editorial
-                literacy, and AIMAN turn a simple search into a thoughtful
-                experience.
-              </p>
-            </article>
-            <article>
-              <span>03 / Core Experience</span>
-              <h3>Clear enough to use quickly. Meaningful enough to remember.</h3>
-              <p>
-                AI-assisted discovery supports the journey without replacing
-                human curation, context, or responsibility.
-              </p>
-            </article>
-            <article>
-              <span>04 / Impact</span>
-              <h3>A working protected digital product—not a speculative mockup.</h3>
-              <p>
-                IMAN IN MOTION contains 696+ curated films and is officially
-                recorded as an HKI-protected digital work.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="graphic-design" className="design-archive shell section-space">
-        <div className="archive-head reveal">
-          <SectionLabel number="04">Graphic Design Archive</SectionLabel>
-          <div>
-            <h2>Selected visual work from @uwiberani.</h2>
-            <p>
-              Original portfolio assets supplied by Rizki. Select a work to
-              view it in detail.
-            </p>
-          </div>
-        </div>
-
-        <div className="filter-bar reveal" role="group" aria-label="Filter graphic design archive">
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              type="button"
-              className={activeFilter === filter ? "active" : ""}
-              onClick={() => setActiveFilter(filter)}
-              aria-pressed={activeFilter === filter}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
-
-        <div className="art-grid">
-          {filteredArtworks.map((artwork) => (
-            <article className="art-item reveal" key={artwork.id}>
-              <Tilt className="art-visual">
-                <button
-                  type="button"
-                  onClick={(event) => {
-                    artworkTriggerRef.current = event.currentTarget;
-                    setActiveArtwork(artwork);
-                  }}
-                  aria-label={`Open ${artwork.title}`}
-                >
-                  <img src={artwork.image} alt={artwork.title} loading="lazy" />
-                  <span className="art-open">Open work <Arrow diagonal /></span>
-                </button>
-              </Tilt>
-              <div className="art-meta">
-                <span>{artwork.id}</span>
-                <div>
-                  <h3>{artwork.title}</h3>
-                  <p>{artwork.category}</p>
-                </div>
-                <span>4:5</span>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <a
-          className="archive-source"
-          href="https://www.instagram.com/uwiberani/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          View source archive on Instagram <Arrow diagonal />
-        </a>
-      </section>
-
-      <section id="video-editing" className="video-section section-space">
-        <div className="shell">
-          <div className="section-head reveal">
-            <SectionLabel number="05">Video Editing</SectionLabel>
-            <h2>Cinematic rhythm. Human attention.</h2>
-          </div>
-
-          <div className="video-list">
-            <article className="video-project reveal">
-              <div className="video-embed">
-                <iframe
-                  src="https://www.youtube.com/embed/hUufVZppXqk?rel=0"
-                  title="SALUT BANGET!! SEORANG PENGAMEN INSPIRATIF YANG BERJUANG SEJAK SMP"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-                <div className="frame-line" aria-hidden="true" />
-              </div>
-              <div className="video-copy">
-                <span>01 / Human Interest Edit</span>
-                <h3>SALUT BANGET!! SEORANG PENGAMEN INSPIRATIF YANG BERJUANG SEJAK SMP</h3>
-                <p>
-                  A story-led edit shaped around resilience, emotional pacing,
-                  and a clear human arc.
-                </p>
-                <div className="timeline">
-                  <i /><i /><i /><i /><i />
-                  <span>00:01:14:08</span>
-                </div>
-                <a href="https://youtu.be/hUufVZppXqk" target="_blank" rel="noreferrer">
-                  Watch on YouTube <Arrow diagonal />
-                </a>
-              </div>
-            </article>
-
-            <article className="video-project reverse reveal">
-              <div className="video-embed">
-                <iframe
-                  src="https://www.youtube.com/embed/B-Vnd_ngheM?rel=0"
-                  title="KOMUNIKASI DAN PENYIARAN ISLAM UIKA BOGOR"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-                <div className="frame-line" aria-hidden="true" />
-              </div>
-              <div className="video-copy">
-                <span>02 / Institutional Edit</span>
-                <h3>KOMUNIKASI DAN PENYIARAN ISLAM UIKA BOGOR</h3>
-                <p>
-                  An institutional edit balancing information, visual rhythm,
-                  and a focused academic identity.
-                </p>
-                <div className="timeline">
-                  <i /><i /><i /><i /><i />
-                  <span>00:02:09:17</span>
-                </div>
-                <a href="https://youtu.be/B-Vnd_ngheM" target="_blank" rel="noreferrer">
-                  Watch on YouTube <Arrow diagonal />
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="profile" className="profile-section section-space">
-        <div className="shell">
-          <div className="section-head reveal">
-            <SectionLabel number="06">Capability Profile</SectionLabel>
-            <h2>Built to connect craft, communication, and technology.</h2>
-          </div>
-
-          <div className="capability-list">
-            {capabilities.map((capability) => (
-              <article key={capability.id} className="capability reveal">
-                <span>{capability.id}</span>
-                <h3>{capability.title}</h3>
-                <p>{capability.description}</p>
-                <small>{capability.tools}</small>
-              </article>
-            ))}
-          </div>
-
-          <div className="skill-wall reveal">
-            <div className="skill-wall-head">
-              <div>
-                <span>Toolbox / 16</span>
-                <h3>Tools I use to make ideas real.</h3>
-              </div>
-              <p>
-                A practical stack across design, motion, live production, and
-                digital products.
-              </p>
-            </div>
-
-            <div className="skill-logo-grid" role="list" aria-label="Creative and digital tools">
-              {skillTools.map((tool, index) => (
-                <article
-                  key={tool.name}
-                  role="listitem"
-                  className="skill-card"
-                  style={{
-                    "--tool-color": tool.color,
-                    "--skill-index": index,
-                  }}
-                >
-                  <SkillMark tool={tool} />
-                  <span className="skill-card-copy">
-                    <strong>{tool.name}</strong>
-                    <small>{tool.category}</small>
-                  </span>
-                  <i aria-hidden="true">{String(index + 1).padStart(2, "0")}</i>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <div className="career-grid">
-            <div className="experience reveal">
-              <div className="subsection-title">
-                <span>A</span>
-                <h3>Selected Experience</h3>
-              </div>
-              {experiences.map((experience) => (
-                <article key={`${experience.period}-${experience.company}`}>
-                  <span>{experience.period}</span>
-                  <div>
-                    <h4>{experience.role}</h4>
-                    <strong>{experience.company}</strong>
-                    <p>{experience.note}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <div className="credentials reveal">
-              <div className="subsection-title">
-                <span>B</span>
-                <h3>Selected Certifications</h3>
-              </div>
-              {certifications.map((certification, index) => (
-                <article key={certification.title}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <h4 lang="id">{certification.title}</h4>
-                    <p>{certification.issuer}</p>
-                  </div>
-                  <small>{certification.date}</small>
-                </article>
-              ))}
-              <a href={linkedinUrl} target="_blank" rel="noreferrer">
-                View full profile on LinkedIn <Arrow diagonal />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="contact-section section-space">
-        <div className="shell">
-          <div className="contact-top reveal">
-            <p>Have a role, brief, or bold idea?</p>
-            <h2>Let&apos;s make<br />something <span>move.</span></h2>
-          </div>
-
-          <div className="contact-links reveal">
-            <a href="mailto:rizkidwifrb@gmail.com">
-              <span>01 / Email</span>
-              <strong>rizkidwifrb@gmail.com</strong>
-              <Arrow diagonal />
-            </a>
-            <a href="https://wa.me/6289682218382" target="_blank" rel="noreferrer">
-              <span>02 / WhatsApp</span>
-              <strong>+62 896-8221-8382</strong>
-              <Arrow diagonal />
-            </a>
-            <a href="https://www.instagram.com/uwiberani/" target="_blank" rel="noreferrer">
-              <span>03 / Instagram</span>
-              <strong>@uwiberani</strong>
-              <Arrow diagonal />
-            </a>
-            <a href={linkedinUrl} target="_blank" rel="noreferrer">
-              <span>04 / LinkedIn</span>
-              <strong>Rizki Dwi Febriansyah</strong>
-              <Arrow diagonal />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <footer className="site-footer shell">
-        <div>
-          <strong>RIZKI DWI FEBRIANSYAH, S.Sos.</strong>
-          <span>Visual Specialist · Bogor, Indonesia</span>
-        </div>
-        <a href="#top">Back to top ↑</a>
-        <span>© 2026</span>
-      </footer>
-
-      {activeArtwork && (
-        <div
-          className="modal-backdrop"
-          role="presentation"
-          onMouseDown={(event) => {
-            if (event.currentTarget === event.target) setActiveArtwork(null);
-          }}
-        >
-          <div
-            className="art-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="art-modal-title"
-          >
-            <button
-              ref={modalCloseRef}
-              type="button"
-              className="modal-close"
-              onClick={() => setActiveArtwork(null)}
-              aria-label="Close artwork"
-            >
-              Close ×
-            </button>
-            <div className="modal-image">
-              <img src={activeArtwork.image} alt={activeArtwork.title} />
-            </div>
-            <div className="modal-copy">
-              <span>{activeArtwork.id} / {activeArtwork.category}</span>
-              <h3 id="art-modal-title">{activeArtwork.title}</h3>
-              <p>{activeArtwork.description}</p>
-              <div className="micro-tags">
-                {activeArtwork.tags.map((tag) => <span key={tag}>{tag}</span>)}
-              </div>
-              <a
-                href="https://www.instagram.com/uwiberani/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open source profile <Arrow diagonal />
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
-    </main>
+    <>
+      {isLoading && <Loader onComplete={() => setIsLoading(false)} />}
+      <div
+        ref={appRef}
+        className={`portfolio-app ${isLoading ? "is-loading" : ""}`}
+        onPointerMove={moveGravity}
+        onPointerLeave={resetGravity}
+      >
+        <GravityField />
+        <Header activePage={activePage} onNavigate={setActivePage} />
+        <main className="view-stage" key={activePage}>
+          {renderView()}
+        </main>
+      </div>
+    </>
   );
 }
