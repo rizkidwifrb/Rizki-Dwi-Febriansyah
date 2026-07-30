@@ -1,6 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import {
+  siCoreldraw,
+  siCss,
+  siGithub,
+  siHtml5,
+  siJavascript,
+  siReact,
+  siTailwindcss,
+  siVite,
+} from "simple-icons";
 
 const artworks = [
   {
@@ -119,6 +129,119 @@ const capabilities = [
     description:
       "UI/UX, responsive frontends, fullstack product thinking, and useful AI integration.",
     tools: "React · JavaScript · Web Development · AI",
+  },
+];
+
+const skillTools = [
+  {
+    name: "Adobe Photoshop",
+    short: "Ps",
+    category: "Image Editing",
+    color: "#31a8ff",
+  },
+  {
+    name: "Adobe Illustrator",
+    short: "Ai",
+    category: "Vector Design",
+    color: "#ff9a00",
+  },
+  {
+    name: "Canva",
+    short: "Ca",
+    category: "Visual Design",
+    color: "#7d72ff",
+    variant: "canva",
+  },
+  {
+    name: "CorelDRAW",
+    short: "Cd",
+    category: "Vector Design",
+    color: "#61c454",
+    icon: siCoreldraw,
+  },
+  {
+    name: "CapCut",
+    short: "Cc",
+    category: "Video Editing",
+    color: "#f4f4ef",
+    variant: "capcut",
+  },
+  {
+    name: "vMix",
+    short: "vM",
+    category: "Live Production",
+    color: "#8b7cff",
+    variant: "vmix",
+  },
+  {
+    name: "React",
+    short: "Re",
+    category: "Frontend",
+    color: "#61dafb",
+    icon: siReact,
+  },
+  {
+    name: "JavaScript",
+    short: "JS",
+    category: "Language",
+    color: "#f7df1e",
+    icon: siJavascript,
+  },
+  {
+    name: "HTML5",
+    short: "H5",
+    category: "Markup",
+    color: "#e34f26",
+    icon: siHtml5,
+  },
+  {
+    name: "CSS",
+    short: "C3",
+    category: "Styling",
+    color: "#663399",
+    icon: siCss,
+  },
+  {
+    name: "Tailwind CSS",
+    short: "Tw",
+    category: "Styling",
+    color: "#06b6d4",
+    icon: siTailwindcss,
+  },
+  {
+    name: "Vite",
+    short: "Vi",
+    category: "Build Tool",
+    color: "#8b5cf6",
+    icon: siVite,
+  },
+  {
+    name: "GitHub",
+    short: "Gh",
+    category: "Version Control",
+    color: "#f4f4ef",
+    icon: siGithub,
+  },
+  {
+    name: "Visual Storytelling",
+    short: "VS",
+    category: "Creative Direction",
+    color: "#ff6b8a",
+    variant: "story",
+  },
+  {
+    name: "AI Integration",
+    short: "AI",
+    category: "Digital Product",
+    color: "#55e6c1",
+    variant: "ai",
+  },
+  {
+    name: "Live Streaming",
+    short: "LS",
+    category: "Broadcast",
+    color: "#ff5e57",
+    variant: "live",
   },
 ];
 
@@ -248,6 +371,23 @@ function SectionLabel({ number, children }) {
       <span>{number}</span>
       <p>{children}</p>
     </div>
+  );
+}
+
+function SkillMark({ tool }) {
+  return (
+    <span
+      className={`skill-logo ${tool.variant ? `is-${tool.variant}` : ""}`}
+      aria-hidden="true"
+    >
+      {tool.icon ? (
+        <svg viewBox="0 0 24 24" focusable="false">
+          <path d={tool.icon.path} />
+        </svg>
+      ) : (
+        <strong>{tool.short}</strong>
+      )}
+    </span>
   );
 }
 
@@ -396,6 +536,7 @@ export default function Home() {
   const [activeArtwork, setActiveArtwork] = useState(null);
   const [activeSection, setActiveSection] = useState("about");
   const portraitRef = useRef(null);
+  const scrollProgressRef = useRef(null);
   const modalCloseRef = useRef(null);
   const artworkTriggerRef = useRef(null);
 
@@ -452,6 +593,26 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const updateProgress = () => {
+      const scrollable =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+      scrollProgressRef.current?.style.setProperty(
+        "--scroll-progress",
+        Math.min(1, Math.max(0, progress)),
+      );
+    };
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    return () => {
+      window.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
+    };
+  }, []);
+
   const movePortrait = (event) => {
     if (
       window.matchMedia("(pointer: coarse)").matches ||
@@ -490,10 +651,17 @@ export default function Home() {
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#work">Work</a>
-          <a href="#web-project">Web Project</a>
-          <a href="#contact">Contact</a>
+          {primaryNavigation.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={activeSection === item.id ? "active" : ""}
+              aria-current={activeSection === item.id ? "page" : undefined}
+            >
+              <span>{item.number}</span>
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         <a className="header-cta" href="mailto:rizkidwifrb@gmail.com">
@@ -503,6 +671,12 @@ export default function Home() {
         <a className="mobile-mail" href="mailto:rizkidwifrb@gmail.com">
           Hire me <Arrow diagonal />
         </a>
+
+        <span
+          ref={scrollProgressRef}
+          className="scroll-progress"
+          aria-hidden="true"
+        />
       </header>
 
       <nav className="mobile-dock" aria-label="Mobile navigation">
@@ -529,8 +703,9 @@ export default function Home() {
             </div>
 
             <h1>
+              <span className="hero-greeting">Hi, I&apos;m Rizki.</span>
               <span>Visual</span>
-              <span className="outlined">Specialist</span>
+              <span className="outlined">specialist.</span>
             </h1>
           </div>
 
@@ -565,6 +740,14 @@ export default function Home() {
           }}
         >
           <div className="portrait-code">RDF—01</div>
+          <div className="hero-nametag" aria-label="Rizki creative identity">
+            <div className="nametag-top">
+              <span>Creative ID</span>
+              <small>RDF / 026</small>
+            </div>
+            <strong>Rizki Dwi<br />Febriansyah</strong>
+            <p>Visual Specialist</p>
+          </div>
           <a
             ref={portraitRef}
             className="hero-portrait"
@@ -576,17 +759,17 @@ export default function Home() {
               alt="Rizki Dwi Febriansyah, S.Sos."
             />
             <div className="portrait-gradient" />
+            <span className="portrait-name">
+              <small>Design · Motion · Digital</small>
+              <strong>Rizki Dwi Febriansyah</strong>
+            </span>
             <span className="portrait-about-cta">
               View profile <Arrow diagonal />
             </span>
           </a>
-          <div className="portrait-tag tag-one">
-            <span>WEB PROJECT</span>
-            <strong>Product × AI</strong>
-          </div>
           <div className="portrait-tag tag-two">
-            <span>VISUAL SYSTEM</span>
-            <strong>Design × Motion</strong>
+            <span>NOW EXPLORING</span>
+            <strong>Design × Motion × AI</strong>
           </div>
           <div className="portrait-cross cross-one">+</div>
           <div className="portrait-cross cross-two">+</div>
@@ -995,19 +1178,36 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="tool-marquee reveal" aria-label="Tools">
-            <div>
-              {[
-                "Adobe Photoshop",
-                "Adobe Illustrator",
-                "Canva",
-                "CapCut",
-                "CorelDRAW",
-                "vMix",
-                "React",
-                "Web Development",
-              ].map((tool) => (
-                <span key={tool}>{tool}</span>
+          <div className="skill-wall reveal">
+            <div className="skill-wall-head">
+              <div>
+                <span>Toolbox / 16</span>
+                <h3>Tools I use to make ideas real.</h3>
+              </div>
+              <p>
+                A practical stack across design, motion, live production, and
+                digital products.
+              </p>
+            </div>
+
+            <div className="skill-logo-grid" role="list" aria-label="Creative and digital tools">
+              {skillTools.map((tool, index) => (
+                <article
+                  key={tool.name}
+                  role="listitem"
+                  className="skill-card"
+                  style={{
+                    "--tool-color": tool.color,
+                    "--skill-index": index,
+                  }}
+                >
+                  <SkillMark tool={tool} />
+                  <span className="skill-card-copy">
+                    <strong>{tool.name}</strong>
+                    <small>{tool.category}</small>
+                  </span>
+                  <i aria-hidden="true">{String(index + 1).padStart(2, "0")}</i>
+                </article>
               ))}
             </div>
           </div>
