@@ -1419,6 +1419,39 @@ a:focus-visible {
   background: var(--teal);
 }
 
+.detail-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.detail-link-row .external-button {
+  margin-top: 0;
+}
+
+.secondary-button {
+  display: inline-flex;
+  min-height: 47px;
+  align-items: center;
+  gap: 14px;
+  padding: 0 15px;
+  border: 1px solid rgba(242, 244, 239, 0.16);
+  border-radius: 12px;
+  color: #a9b0aa;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.025);
+  transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.secondary-button:hover {
+  color: var(--teal);
+  border-color: rgba(88, 230, 193, 0.42);
+  transform: translateY(-3px);
+}
+
 .detail-controls {
   display: flex;
   align-items: center;
@@ -3453,4 +3486,48 @@ a:focus-visible {
   .about-bottom .trait-card {
     min-height: 220px;
   }
+}
+
+/* Mobile alignment pass: keep navigation indices visible and make the tool grid read as one table. */
+.tool-grid {
+  overflow: hidden;
+}
+
+.tool-item {
+  border-bottom: 1px solid rgba(242, 244, 239, 0.1);
+}
+
+.tool-item:nth-last-child(-n + 4) {
+  border-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .primary-nav button {
+    gap: 4px;
+    padding-inline: 4px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .primary-nav button > span {
+    display: inline;
+    color: #748078;
+    font-size: 7px;
+    letter-spacing: 0.04em;
+  }
+
+  .tool-item:nth-last-child(-n + 4) {
+    border-bottom: 1px solid rgba(242, 244, 239, 0.1);
+  }
+
+  .tool-item:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+}
+
+.stat-card strong {
+  display: block;
+  min-height: 1em;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.96;
 }

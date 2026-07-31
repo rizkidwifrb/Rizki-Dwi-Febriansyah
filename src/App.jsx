@@ -111,6 +111,78 @@ const artworks = [
       "A tactile brand composition that combines material, silhouette, and basketball culture.",
     tags: ["Brand Visual", "Poster", "Composition"],
   },
+  {
+    id: "07",
+    title: "Cermin Fitrah Kita — Pancasila Poster",
+    category: "Poster",
+    image: "assets/graphic-design/instagram-pancasila.webp",
+    description:
+      "An editorial poster translating the five principles of Pancasila into a bold red-and-white visual system.",
+    tags: ["Poster", "Editorial", "Photo Composite"],
+  },
+  {
+    id: "08",
+    title: "Priceless Moment — Rizki Dwi",
+    category: "Poster",
+    image: "assets/graphic-design/instagram-priceless-moment.webp",
+    description:
+      "A cinematic personal poster built from layered portraiture, documentary texture, and red editorial accents.",
+    tags: ["Poster", "Portrait", "Art Direction"],
+  },
+  {
+    id: "09",
+    title: "We Believe — Football Visual",
+    category: "Sports Visual",
+    image: "assets/graphic-design/instagram-we-believe.webp",
+    description:
+      "A high-energy sports composition using probability, atmosphere, and a stadium-scale narrative.",
+    tags: ["Sports Visual", "Photo Composite", "Social Media"],
+  },
+  {
+    id: "10",
+    title: "We Believe — Cutout Study",
+    category: "Sports Visual",
+    image: "assets/graphic-design/instagram-we-believe-cutout.webp",
+    description:
+      "A cutout-led variation that pushes player separation, badge placement, and visual depth.",
+    tags: ["Sports Visual", "Cutout", "Composition"],
+  },
+  {
+    id: "11",
+    title: "Rise Through the Ruins",
+    category: "Film Poster",
+    image: "assets/graphic-design/instagram-rise-through-ruins.webp",
+    description:
+      "A dark film-poster treatment that combines fractured portraiture, character cards, and a restrained serif hierarchy.",
+    tags: ["Film Poster", "Key Art", "Storytelling"],
+  },
+  {
+    id: "12",
+    title: "Marhaban Ya Ramadhan",
+    category: "Campaign Poster",
+    image: "assets/graphic-design/instagram-marhaban-ramadhan.webp",
+    description:
+      "A cinematic Ramadan campaign visual with night color, motion trails, and a clear headline lockup.",
+    tags: ["Campaign", "Poster", "AI-assisted Visual"],
+  },
+  {
+    id: "13",
+    title: "Photo Grid Portrait",
+    category: "Social Media",
+    image: "assets/graphic-design/instagram-photo-grid.webp",
+    description:
+      "A playful portrait composition using modular color fields and a clear center-of-attention cutout.",
+    tags: ["Social Media", "Portrait", "Layout"],
+  },
+  {
+    id: "14",
+    title: "Program Beasiswa Terbaru",
+    category: "Information Design",
+    image: "assets/graphic-design/instagram-beasiswa.webp",
+    description:
+      "An information-led campaign poster that balances institutional identity, student imagery, and a direct call to action.",
+    tags: ["Information Design", "Campaign", "Typography"],
+  },
 ];
 
 const webScreens = [
@@ -150,6 +222,23 @@ const webScreens = [
     label: "Three prompts lead to one relevant film.",
     image: "assets/iman-in-motion/06-mood-pathway.jpg",
   },
+  {
+    id: "07",
+    title: "Recommendation experience",
+    label: "Hybrid AI recommendations from three simple ratings.",
+    image: "assets/web-projects/wemovies-ai.webp",
+    projectTitle: "WeMovies AI",
+    projectDescription:
+      "A cinematic movie discovery product that combines TMDB metadata with a hybrid recommender to return ten personalized picks.",
+    projectLink: "https://wemoviesai.vercel.app",
+    projectRepo: "https://github.com/aliimndev/capstone-project",
+    facts: [
+      ["Next.js", "frontend"],
+      ["FastAPI", "recommendation API"],
+      ["TMDB", "movie metadata"],
+      ["10", "personalized picks"],
+    ],
+  },
 ];
 
 const videos = [
@@ -172,6 +261,24 @@ const videos = [
     youtubeId: "B-Vnd_ngheM",
     href: "https://youtu.be/B-Vnd_ngheM",
     timecode: "02:09:17",
+  },
+  {
+    id: "03",
+    label: "Short movie",
+    title: "BULLY — Panggung Sekolah Bukan Tempat Luka",
+    description:
+      "A short-movie edit about school bullying, shaped around tension, empathy, and a clear emotional resolution.",
+    youtubeId: "jqs2OhI4-ps",
+    href: "https://youtu.be/jqs2OhI4-ps",
+  },
+  {
+    id: "04",
+    label: "After movie",
+    title: "After Movie KKN-T UIKA — Kelompok 02 Kencana",
+    description:
+      "An after-movie edit that turns a group experience into a compact visual memory through rhythm, people, and place.",
+    youtubeId: "LRsBo9pAyfw",
+    href: "https://youtu.be/LRsBo9pAyfw",
   },
 ];
 
@@ -228,26 +335,26 @@ const projectCategories = [
     number: "01",
     title: "Graphic Design",
     type: "Visual archive",
-    description: "Campaign, poster, product, and social media visual work.",
-    image: "assets/graphic-design/matchday-campaign.jpg",
-    count: "06 selected works",
+    description: "Campaign, poster, product, and social media visual work from the studio and Instagram archive.",
+    image: "assets/graphic-design/instagram-priceless-moment.webp",
+    count: "14 selected works",
   },
   {
     id: "webapp",
     number: "02",
     title: "Web App",
     type: "Digital product",
-    description: "IMAN IN MOTION, a mood-based Islamic film discovery product.",
-    image: "assets/iman-in-motion/06-mood-pathway.jpg",
-    count: "01 case study",
+    description: "IMAN IN MOTION and WeMovies AI, two digital products built around discovery.",
+    image: "assets/web-projects/wemovies-ai.webp",
+    count: "02 case studies",
   },
   {
     id: "video",
     number: "03",
     title: "Video Editing",
     type: "Cinematic reel",
-    description: "Two story-led edits built around pacing, clarity, and feeling.",
-    count: "02 selected edits",
+    description: "Four story-led edits built around pacing, clarity, and feeling.",
+    count: "04 selected edits",
   },
 ];
 
@@ -476,7 +583,7 @@ function AboutView({ onNavigate }) {
         <div className="about-bottom-copy">
           <div className="stats-row" aria-label="Portfolio statistics">
             <ScrambleValue value="03" label="creative disciplines" />
-            <ScrambleValue value="06" label="design works" />
+            <ScrambleValue value="14" label="design works" />
             <ScrambleValue value="696+" label="curated films" />
             <ScrambleValue value="3.57" label="academic GPA" />
           </div>
@@ -631,6 +738,19 @@ function ProjectDetailView({ type, onBack }) {
   const item = collection[index];
   const title = isGraphic ? "Graphic Design" : isWeb ? "IMAN IN MOTION" : "Video Editing";
   const sectionLabel = isGraphic ? "Visual archive" : isWeb ? "Digital product case study" : "Cinematic reel";
+  const webTitle = isWeb ? item.projectTitle || title : title;
+  const webDescription = isWeb
+    ? item.projectDescription || "A mood-based Islamic film discovery web app for digital Islamic literacy."
+    : "";
+  const webLink = isWeb ? item.projectLink || "https://iman-in-motion.web.id" : "";
+  const webFacts = isWeb
+    ? item.facts || [
+        ["696+", "curated films"],
+        ["06", "mood pathways"],
+        ["AIMAN", "AI chatbot"],
+        ["HKI", "protected work"],
+      ]
+    : [];
 
   const previous = () => setIndex((current) => (current - 1 + collection.length) % collection.length);
   const next = () => setIndex((current) => (current + 1) % collection.length);
@@ -663,10 +783,10 @@ function ProjectDetailView({ type, onBack }) {
         <article className="detail-copy">
           <div>
             <p className="eyebrow">{sectionLabel}</p>
-            <h1 id="detail-title">{isWeb ? "IMAN IN MOTION" : item.title}</h1>
+            <h1 id="detail-title">{isWeb ? webTitle : item.title}</h1>
             <p className="detail-lead">
               {isWeb
-                ? "A mood-based Islamic film discovery web app for digital Islamic literacy."
+                ? webDescription
                 : item.description || item.label}
             </p>
           </div>
@@ -679,10 +799,9 @@ function ProjectDetailView({ type, onBack }) {
 
           {isWeb && (
             <div className="product-facts">
-              <span><strong>696+</strong> curated films</span>
-              <span><strong>06</strong> mood pathways</span>
-              <span><strong>AIMAN</strong> AI chatbot</span>
-              <span><strong>HKI</strong> protected work</span>
+              {webFacts.map(([value, label]) => (
+                <span key={`${value}-${label}`}><strong>{value}</strong> {label}</span>
+              ))}
             </div>
           )}
 
@@ -699,9 +818,16 @@ function ProjectDetailView({ type, onBack }) {
           )}
 
           {isWeb && (
-            <a className="external-button" href="https://iman-in-motion.web.id" target="_blank" rel="noreferrer">
-              Visit live product <Arrow diagonal />
-            </a>
+            <div className="detail-link-row">
+              <a className="external-button" href={webLink} target="_blank" rel="noreferrer">
+                Visit live product <Arrow diagonal />
+              </a>
+              {item.projectRepo && (
+                <a className="secondary-button" href={item.projectRepo} target="_blank" rel="noreferrer">
+                  View source <Arrow diagonal />
+                </a>
+              )}
+            </div>
           )}
 
           <DetailControls current={index} total={collection.length} onPrevious={previous} onNext={next} />

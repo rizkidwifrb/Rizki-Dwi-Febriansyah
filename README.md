@@ -75,6 +75,8 @@ public/assets/profile
 
 The rotating gallery uses selected portrait photos from the Instagram export supplied by Rizki.
 
+The graphic archive also includes eight selected poster and campaign visuals from the same export.
+
 Graphic design works:
 
 ```text
@@ -96,6 +98,15 @@ To add another IMAN IN MOTION screenshot:
 
 1. Add a 3:4 image to `public/assets/iman-in-motion`.
 2. Add one item to the `webScreens` array in `src/App.jsx`.
+
+WeMovies AI cover:
+
+```text
+public/assets/web-projects/wemovies-ai.webp
+```
+
+The WeMovies AI case study links to its live product and the
+`aliimndev/capstone-project` source repository.
 
 ## Included interactions
 
