@@ -67,11 +67,13 @@ Visual system, responsive rules, grayscale treatment, animation, and layout:
 src/styles.css
 ```
 
-Profile photo and header avatar:
+Profile photo gallery and header avatar:
 
 ```text
-public/assets/profile/rizki-dwi-febriansyah.png
+public/assets/profile
 ```
+
+The rotating gallery uses selected portrait photos from the Instagram export supplied by Rizki.
 
 Graphic design works:
 

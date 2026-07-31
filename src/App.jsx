@@ -21,6 +21,34 @@ import {
 const linkedinUrl =
   "https://www.linkedin.com/in/rizki-dwi-febriansyah-s-sos-5152931a6";
 
+const profilePhotos = [
+  {
+    src: "assets/profile/rizki-ig-formal.jpg",
+    alt: "Rizki in a formal portrait",
+    label: "Formal portrait",
+  },
+  {
+    src: "assets/profile/rizki-ig-blue-shirt.jpg",
+    alt: "Rizki in a blue shirt",
+    label: "Everyday portrait",
+  },
+  {
+    src: "assets/profile/rizki-ig-outdoor.webp",
+    alt: "Rizki outdoors by the beach",
+    label: "Outside the studio",
+  },
+  {
+    src: "assets/profile/rizki-ig-graduation.webp",
+    alt: "Rizki wearing a graduation stole",
+    label: "Graduation day",
+  },
+  {
+    src: "assets/profile/rizki-ig-green.webp",
+    alt: "Rizki in a green jacket",
+    label: "On the move",
+  },
+];
+
 const navigation = [
   { id: "about", number: "01", label: "About" },
   { id: "work", number: "02", label: "Work" },
@@ -245,6 +273,52 @@ function SkillMark({ tool }) {
   );
 }
 
+function ProfileGallery() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActive((current) => (current + 1) % profilePhotos.length);
+    }, 4600);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="profile-gallery">
+      <div className="profile-gallery-main">
+        {profilePhotos.map((photo, index) => (
+          <img
+            key={photo.src}
+            className={index === active ? "is-active" : ""}
+            src={photo.src}
+            alt={index === active ? photo.alt : ""}
+            aria-hidden={index === active ? undefined : true}
+          />
+        ))}
+        <div className="profile-gallery-sheen" />
+        <div className="profile-gallery-meta">
+          <span>RIZKI / VISUAL SPECIALIST</span>
+          <strong>{profilePhotos[active].label}</strong>
+        </div>
+      </div>
+      <div className="profile-gallery-strip" aria-label="Profile photo selection">
+        {profilePhotos.map((photo, index) => (
+          <button
+            key={photo.src}
+            type="button"
+            className={index === active ? "is-active" : ""}
+            onClick={() => setActive(index)}
+            aria-label={`Show ${photo.label}`}
+            aria-pressed={index === active}
+          >
+            <img src={photo.src} alt="" />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Loader({ onComplete }) {
   const [progress, setProgress] = useState(1);
 
@@ -331,7 +405,7 @@ function Header({ activePage, onNavigate }) {
     <header className="app-header">
       <button className="brand-lockup" type="button" onClick={() => onNavigate("about")}>
         <span className="brand-avatar">
-          <img src="assets/profile/rizki-dwi-febriansyah.png" alt="" />
+          <img src={profilePhotos[0].src} alt="" />
         </span>
         <span>
           <strong>Rizki Dwi Febriansyah</strong>
@@ -362,7 +436,7 @@ function Header({ activePage, onNavigate }) {
   );
 }
 
-function AboutView() {
+function AboutView({ onNavigate }) {
   return (
     <section className="view view-about" aria-labelledby="about-title">
       <div className="view-topline">
@@ -370,10 +444,10 @@ function AboutView() {
         <p>Creative communication, visual craft, and digital product thinking.</p>
       </div>
 
-      <div className="about-layout">
+      <div className="about-hero">
         <div className="about-intro">
           <p className="eyebrow">Hi, I&apos;m Rizki.</p>
-          <h1 id="about-title">Visual Specialist</h1>
+          <h1 id="about-title">Visual <span>Specialist</span></h1>
           <p className="lead">
             Rizki Dwi Febriansyah, S.Sos. is a Visual Specialist focused on graphic design,
             video editing, visual storytelling, and digital innovation.
@@ -383,28 +457,29 @@ function AboutView() {
             purpose, and message, then brings craft, motion, and technology together.
           </p>
 
+          <div className="hero-actions">
+            <button type="button" onClick={() => onNavigate("projects")}>
+              Explore projects <Arrow diagonal />
+            </button>
+            <a href="mailto:rizkidwifrb@gmail.com">Let&apos;s talk <Arrow diagonal /></a>
+          </div>
+        </div>
+
+        <div className="about-hero-visual">
+          <ProfileGallery />
+          <span className="hero-note hero-note-top">BOGOR / INDONESIA</span>
+          <span className="hero-note hero-note-bottom">DESIGN · MOTION · DIGITAL</span>
+        </div>
+      </div>
+
+      <div className="about-bottom">
+        <div className="about-bottom-copy">
           <div className="stats-row" aria-label="Portfolio statistics">
             <ScrambleValue value="03" label="creative disciplines" />
             <ScrambleValue value="06" label="design works" />
             <ScrambleValue value="696+" label="curated films" />
             <ScrambleValue value="3.57" label="academic GPA" />
           </div>
-        </div>
-
-        <div className="about-side">
-          <article className="identity-card">
-            <div className="identity-photo">
-              <img
-                src="assets/profile/rizki-dwi-febriansyah.png"
-                alt="Rizki Dwi Febriansyah, S.Sos."
-              />
-              <span className="identity-line" />
-            </div>
-            <div className="identity-footer">
-              <span>BOGOR / INDONESIA</span>
-              <strong>Design · Motion · Digital</strong>
-            </div>
-          </article>
 
           <article className="trait-card">
             <div>
@@ -418,7 +493,9 @@ function AboutView() {
               <p>Time-boxing and clear approval points keep refinement useful.</p>
             </div>
           </article>
+        </div>
 
+        <div className="about-bottom-stack">
           <article className="tool-panel">
             <div className="tool-panel-title">
               <span>Creative stack</span>
@@ -708,7 +785,7 @@ export default function App() {
   };
 
   const renderView = () => {
-    if (activePage === "about") return <AboutView />;
+    if (activePage === "about") return <AboutView onNavigate={setActivePage} />;
     if (activePage === "work") return <WorkView />;
     if (activePage === "projects") return <ProjectsView onOpenProject={setActivePage} />;
     if (activePage === "graphic" || activePage === "webapp" || activePage === "video") {
