@@ -765,6 +765,10 @@ export default function App() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [activePage]);
 
+  useEffect(() => {
+    appRef.current?.querySelector(".view-stage")?.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [activePage]);
+
   const moveGravity = (event) => {
     if (
       window.matchMedia("(pointer: coarse)").matches ||
